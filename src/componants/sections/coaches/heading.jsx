@@ -1,4 +1,4 @@
-const Heading = () => {
+const PageHead = () => {
   return (
     <div>
       <div className="bg-main/80 text-white flex flex-col justify-center items-center gap-3  rounded-b-4xl h-[140px]">
@@ -11,4 +11,4 @@ const Heading = () => {
   );
 };
 
-export default Heading;
+export default PageHead;
