@@ -1,4 +1,4 @@
-// import Heading from "../componants/sections/coaches/Heading"
+import PageHead from "../componants/sections/coaches/Heading"
 import CoachCard from "../componants/sections/coaches/coach-card"
 import FilterBar from "../componants/sections/coaches/filter-bar"
 import Clients from "../componants/sections/shared/clients"
@@ -9,7 +9,7 @@ import WhyUs from "../componants/sections/shared/why-us"
 const Coaches = () => {
   return (
     <div className="min-h-screen bg-body">
-      {/* <Heading /> */}
+      <PageHead />
       <FilterBar />
       <div className="grid grid-cols-1 gap-5 w-[90%] mb-10 m-auto md:grid-cols-2">
         <CoachCard />
