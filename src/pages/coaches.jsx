@@ -1,4 +1,4 @@
-import PageHead from "../componants/sections/coaches/Heading"
+import PageHead from "../componants/sections/coaches/heading"
 import CoachCard from "../componants/sections/coaches/coach-card"
 import FilterBar from "../componants/sections/coaches/filter-bar"
 import Clients from "../componants/sections/shared/clients"
