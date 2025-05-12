@@ -1,4 +1,12 @@
+import { redirect, useNavigate } from "react-router-dom";
+
 const Login = () => {
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    localStorage.setItem("loggedin", true);
+    navigate("/");
+  };
   return (
     <div className="flex flex-col gap-5">
       <p className="text-[#666C6F] text-[14px] ">
@@ -21,7 +29,7 @@ const Login = () => {
         </div>
         <div className="flex flex-col gap-3">
           <label className="text-[#666C6F]" htmlFor="name">
-          Password*
+            Password*
           </label>
           <input
             required
@@ -32,7 +40,12 @@ const Login = () => {
             placeholder="Enter your password"
           />
         </div>
-        <button className="bg-main w-1/2 m-auto text-white py-3 rounded-4xl">SEND</button>
+        <button
+          onClick={handleLogin}
+          className="bg-main w-1/2 m-auto text-white py-3 rounded-4xl"
+        >
+          SEND
+        </button>
       </div>
     </div>
   );

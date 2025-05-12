@@ -6,7 +6,7 @@ const AuthLayout = () => {
   const [active, setActive] = useState('login')
   const { pathname } = useLocation(); // Gets current URL path
   const isRegisterRoute = pathname === '/auth/register';
-
+  
   return (
     <div className="flex justify-between min-h-svh w-[90%] m-auto md:p-10">
       <div className={`${clasess.authImg} hidden md:block relative w-1/2 rounded-2xl`}>

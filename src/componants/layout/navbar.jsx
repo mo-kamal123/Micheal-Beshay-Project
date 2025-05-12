@@ -10,10 +10,11 @@ import { HiOutlineMail } from "react-icons/hi";
 import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
-  const [logedIn, setLogiedIn] = useState(true);
+  // const [logedIn, setLogiedIn] = useState(true);
   const [showNoti, setShowNoti] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { t } = useTranslation();
+  const logedIn = localStorage.getItem('loggedin') || false
 
   
   const messages = [
