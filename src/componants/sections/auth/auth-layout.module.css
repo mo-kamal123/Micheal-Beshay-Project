@@ -1,0 +1,7 @@
+.authImg {
+    overflow: hidden;
+    background-image: url("../../../assets/home-imgs/why_us.jpg");
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+}

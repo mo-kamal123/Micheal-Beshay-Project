@@ -1,0 +1,22 @@
+import AboutMicheal from "../componants/sections/about-us/about-micheal";
+import Summery from "../componants/sections/about-us/summery";
+import Clients from "../componants/sections/shared/clients";
+import NumbersCard from "../componants/sections/shared/number-card";
+
+const AboutUs = () => {
+  return (
+    <div>
+      <Summery />
+      <AboutMicheal />
+      <div className="w-[90%] m-auto my-10 grid grid-cols-2 gap-10 md:w-[80%] md:grid-cols-4">
+        <NumbersCard number={"4385 +"} title={"Session"} active={true} />
+        <NumbersCard number={"100"} title={"Coaches Trained"} />
+        <NumbersCard number={"13"} title={"Countries"} />
+        <NumbersCard number={"13"} title={"Years of Experience"} />
+      </div>
+      <Clients />
+    </div>
+  );
+};
+
+export default AboutUs;

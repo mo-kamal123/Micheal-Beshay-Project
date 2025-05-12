@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Payment Confirmation</title>
+  </head>
+  <body
+    style="
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+    "
+  >
+    <table width="100%" cellspacing="0" cellpadding="0" align="center">
+      <tr>
+        <td align="center" style="padding: 30px 0">
+          <img
+            src="/logo.png"
+            alt="Logo"
+            width="100"
+            style="margin-bottom: 20px"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td align="center" style="padding: 10px">
+          <table
+            width="90%"
+            cellpadding="10"
+            cellspacing="0"
+            style="
+              max-width: 600px;
+              background-color: #f7f7f7;
+              border-radius: 6px;
+            "
+          >
+            <tr>
+              <td style="font-size: 16px">
+                <strong>Bill To:</strong><br />
+                {{userName}}<br />
+                {{userEmail}}<br />
+                {{userPhone}}
+              </td>
+              <td align="right" style="font-size: 14px">
+                <strong>Date:</strong><br />
+                Invoice date: {{invoiceDate}}<br />
+                Reservation date: {{reservationDate}}<br />
+                Time: {{reservationTime}}
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <table
+                  width="100%"
+                  cellpadding="10"
+                  cellspacing="0"
+                  style="background-color: #ffffff; border-radius: 8px"
+                >
+                  <tr>
+                    <td style="font-size: 16px">Payment</td>
+                    <td
+                      align="right"
+                      style="font-size: 16px; font-weight: bold"
+                    >
+                      EGP {{total}}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" style="padding-top: 20px">
+                      <table
+                        width="100%"
+                        cellpadding="8"
+                        cellspacing="0"
+                        style="
+                          background-color: #002a5c;
+                          border-radius: 8px;
+                          color: #ffffff;
+                        "
+                      >
+                        <tr>
+                          <td>Subtotal</td>
+                          <td align="right">EGP {{subtotal}}</td>
+                        </tr>
+                        <tr>
+                          <td>TAX</td>
+                          <td align="right">EGP {{tax}}</td>
+                        </tr>
+                        <tr>
+                          <td>Discount</td>
+                          <td align="right">EGP {{discount}}</td>
+                        </tr>
+                        <tr>
+                          <td><strong>Invoice Total</strong></td>
+                          <td align="right">
+                            <strong>EGP {{invoiceTotal}}</strong>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" align="center" style="padding-top: 20px">
+                Regards,<br />
+                <strong>Michale Beshay</strong>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td
+          align="center"
+          style="font-size: 12px; color: #999; padding: 20px 0"
+        >
+          <p style="margin: 0">Terms • Privacy • Program Policies</p>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

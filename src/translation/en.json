@@ -1,0 +1,93 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "coaches": "Coaches",
+    "contact": "Contact Us",
+    "becomeCoach": "Become coach",
+    "createAccount": "Create an account",
+    "login": "Login",    
+    "profile": "Your profile"
+  },
+  "hero": {
+    "title": "HAPPY LIFE CLUB",
+    "subtitle": "For a life changing experience",
+    "description": "Laoreet amet arcu quisque aliquam feugiat sit. Mauris quis vestibulum viverra nullam lobortis et eget tortor."
+  },
+  "freeSession": {
+    "title": "FREE SESSION",
+    "button": "Get free session",
+    "questions": [
+      "Why we offering free session?",
+      "How can help you in the free session?",
+      "When can you get this session?"
+    ]
+  },
+  "whyChooseUs": {
+    "title": "WHY CHOOSE US",
+    "heading": "Why We're Your the best choice",
+    "description": "Massa odio interdum quisque massa ut mattis eget. Rhoncus sed convallis nulla sit facilisis vitae id lacus. Pharetra ultrices nisl.",
+    "features": [
+      {
+        "title": "Expertise and Experience",
+        "description": "Massa odio interdum quisque massa ut mattis eget. Rhoncus sed convallis nulla sit facilisis vitae id lacus. Pharetra ultrices nisl."
+      },
+      {
+        "title": "Personalized Approach",
+        "description": "Massa odio interdum quisque massa ut mattis eget. Rhoncus sed convallis nulla sit facilisis vitae id lacus. Pharetra ultrices nisl."
+      },
+      {
+        "title": "Confidentiality and Trust",
+        "description": "Massa odio interdum quisque massa ut mattis eget. Rhoncus sed convallis nulla sit facilisis vitae id lacus. Pharetra ultrices nisl."
+      }
+    ]
+  },
+  "trust": {
+    "title": "YOU TRUST IN US",
+    "heading": "Check our client's say about us",
+    "description": "We have been operating for over an providing top-notch services to our clients and build strong track record in the industry.",
+    "testimonial": {
+      "text": "We have been operating for over a decade providing top-notch services.",
+      "author": "Client name",
+      "date": "22 Aug 2023"
+    },
+    "stats": [
+      {
+        "value": "4385+",
+        "label": "Session"
+      },
+      {
+        "value": "100",
+        "label": "Coaches Trained"
+      },
+      {
+        "value": "13",
+        "label": "Countries"
+      },
+      {
+        "value": "13",
+        "label": "Years of Experience"
+      }
+    ]
+  },
+  "coaching": {
+    "title": "OUR COACHING",
+    "heading": "The best coaching we have",
+    "coach": {
+      "name": "Mohamed Ahmed",
+      "description": "Lorem Ipsum is simply dummy text the printing and provide best visa ever",
+      "button": "Book Now"
+    }
+  },
+  "video": {
+    "title": "VIDEO",
+    "heading": "Become a Life Coach: All what you need to know..."
+  },
+  "footer": {
+    "home": "Home",
+    "about": "About Us",
+    "coaches": "Coaches",
+    "contact": "Contact Us",
+    "becomeCoach": "Become coach"
+  }
+}
