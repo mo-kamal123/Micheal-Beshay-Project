@@ -32,9 +32,9 @@ const Verify = () => {
     <div className="flex flex-col items-center gap-4 p-4">
       <h2 className="text-2xl font-bold">Verify Code</h2>
       <p className="text-[#666C6F] text-[13px] text-center flex items-center gap-1">
-        We send code on your email {"  "}
+        We send code on your email
         <span className="font-medium  text-black underline">
-         mostafa.dimamart@gmail.com
+          mostafa.dimamart@gmail.com
         </span>
       </p>
 

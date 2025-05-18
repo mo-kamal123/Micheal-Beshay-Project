@@ -6,6 +6,7 @@ import { IoCheckmark } from "react-icons/io5";
 import SectionTitle from "../../common/section-title";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import PhoneInput from "react-phone-input-2";
 
 const FreeSession = ({ getSession }) => {
   const { t } = useTranslation();
@@ -70,9 +71,23 @@ const FreeSession = ({ getSession }) => {
             <input required className="py-3 px-6 border border-main bg-white rounded-4xl font-light text-[14px] placeholder-[#ACACAC]" type="text" name="name" id="name" placeholder="Enter your Email"/>
         </div>
         <div className="flex flex-col gap-3">
-            <label className="text-[#666C6F]" htmlFor="name">Phone number*</label>
-            <input required className="py-3 px-6 border border-main bg-white rounded-4xl font-light text-[14px] placeholder-[#ACACAC]" type="text" name="name" id="name" placeholder="Enter your phone number"/>
-        </div>
+        <label className="block text-gray-700 mb-2">Phone number*</label>
+        <PhoneInput
+          country={"eg"} 
+          // value={'00000'}
+          inputStyle={{
+            width: "100%",
+            borderRadius: "30px",
+            border: "1px solid #001f5e",
+            padding: '0 60px',
+        }}
+        buttonStyle={{
+                border: "1px solid #001f5e",
+                borderRadius: "30px ",
+                padding: '6px',
+          }}
+        />
+      </div>
         <button className="bg-main text-white py-3 rounded-4xl">Get a session</button>
           </div>
         </div>

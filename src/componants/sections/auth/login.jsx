@@ -1,10 +1,14 @@
-import { redirect, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { login } from "../../../store/auth-slice/auth-slice";
 
 const Login = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch()
+
 
   const handleLogin = () => {
-    localStorage.setItem("loggedin", true);
+    dispatch(login())
     navigate("/");
   };
   return (

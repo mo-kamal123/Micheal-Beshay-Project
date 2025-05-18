@@ -25,7 +25,6 @@ import YourSesstions from "../componants/sections/user-profile/your-sessions";
 import YourWallet from "../componants/sections/user-profile/your-wallet";
 import { ProtectedRoute } from "./protected-routes";
 
-// const loggedin = localStorage.getItem('loggedin') 
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -49,7 +48,7 @@ export const router = createBrowserRouter([
 
       // Protected Routes (Profile + Payments)
       {
-        element: <ProtectedRoute isAuthenticated={true} />,
+        element: <ProtectedRoute />,
         children: [
           // Protected Profile Routes
           {
@@ -75,7 +74,7 @@ export const router = createBrowserRouter([
   // Auth Routes (Public)
   { 
     path: "auth", 
-    element: <Auth isAuthenticated={true} />, 
+    element: <Auth isAuthenticated={false} />, 
     children: [
       { index: true, element: <Login /> },
       { path: "register", element: <Register /> },

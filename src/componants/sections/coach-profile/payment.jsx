@@ -1,24 +1,16 @@
 import { useState } from "react";
 import visa from "../../../assets/coach-imgs/Payment method icon.svg";
-import master from "../../../assets/coach-imgs/Payment method icon.svg";
+import master from "../../../assets/coach-imgs/Payment method icon (1).svg";
 import vc from "../../../assets/coach-imgs/VC.png";
 import fawry from "../../../assets/coach-imgs/Fawry.png";
 import aman from "../../../assets/coach-imgs/Aman.png";
 import coach from "../../../assets/About-imgs/coach.jpg";
 import { Link } from "react-router-dom";
+import { IoWallet } from "react-icons/io5";
 const Payment = () => {
   const [selectedPayment, setSelectedPayment] = useState("visa");
   const [promoCode, setPromoCode] = useState("Active");
 
-  const paymentMethods = [
-    { id: "visa", name: visa, description: "Available to pay with all banks" },
-    { id: "fewry", name: fawry, description: "Pay with E-wallets" },
-    {
-      id: "wallet",
-      name: "Wallet",
-      description: "Pay with wallet credit available: 300 EGP",
-    },
-  ];
 
   return (
     <div className="flex flex-col-reverse md:flex-row justify-between gap-10 w-[90%] mx-auto my-20 ">
@@ -30,28 +22,29 @@ const Payment = () => {
         </p>
 
         <div className="space-y-4">
-          {paymentMethods.map((method) => (
             <div
-              key={method.id}
               className={`p-4 border rounded-lg cursor-pointer transition-colors ${
-                selectedPayment === method.id
+                selectedPayment === 'card'
                   ? "border-main "
                   : "border-[#E2E2E2] bg-white"
               }`}
-              onClick={() => setSelectedPayment(method.id)}
+              onClick={() => setSelectedPayment('card')}
             >
               <div className="flex justify-between items-center">
                 <div>
-                  <img src={method.name} alt="visa icon" className="w-14" />
-                  <p className="text-sm text-gray-500">{method.description}</p>
+                  <div className="flex items-center gap-2 my-2">
+                    <img src={visa} alt="visa icon" className="w-12" />
+                    <img src={master} alt="visa icon" className="w-12" />
+                  </div>
+                  <p className="text-sm text-gray-500">{'Available to pay with all banks'}</p>
                 </div>
                 <div
                   className={`w-6 h-6 rounded-full border mr-3 flex items-center justify-center`}
                 >
-                  {selectedPayment === method.id && (
+                  {selectedPayment === 'card' && (
                     <div
                       className={`w-3 h-3 rounded-full ${
-                        selectedPayment === method.id
+                        selectedPayment === 'card'
                           ? "border-main bg-main"
                           : "border-gray-400"
                       } `}
@@ -60,7 +53,66 @@ const Payment = () => {
                 </div>
               </div>
             </div>
-          ))}
+            <div
+              className={`p-4 border rounded-lg cursor-pointer transition-colors ${
+                selectedPayment === 'e-wallets'
+                  ? "border-main "
+                  : "border-[#E2E2E2] bg-white"
+              }`}
+              onClick={() => setSelectedPayment('e-wallets')}
+            >
+              <div className="flex justify-between items-center">
+                <div>
+                  <div className="flex items-center gap-2 my-2">
+                  <img src={vc} alt="visa icon" className="w-12 rounded-xl" />
+                  <img src={fawry} alt="visa icon" className="w-12 rounded-xl" />
+                  <img src={aman} alt="visa icon" className="w-12 rounded-xl" />
+                  </div>
+                  <p className="text-sm text-gray-500">Pay with E-wallets</p>
+                </div>
+                <div
+                  className={`w-6 h-6 rounded-full border mr-3 flex items-center justify-center`}
+                >
+                  {selectedPayment === 'e-wallets' && (
+                    <div
+                      className={`w-3 h-3 rounded-full ${
+                        selectedPayment === 'e-wallets'
+                          ? "border-main bg-main"
+                          : "border-gray-400"
+                      } `}
+                    ></div>
+                  )}
+                </div>
+              </div>
+            </div>
+            <div
+              className={`p-4 border rounded-lg cursor-pointer transition-colors ${
+                selectedPayment === 'my-wallet'
+                  ? "border-main "
+                  : "border-[#E2E2E2] bg-white"
+              }`}
+              onClick={() => setSelectedPayment('my-wallet')}
+            >
+              <div className="flex justify-between items-center">
+                <div>
+                  <p className="text-2xl text-main my-2"><IoWallet /></p>
+                  <p className="text-sm text-gray-500">Pay with wallet credit available : 300 EGP</p>
+                </div>
+                <div
+                  className={`w-6 h-6 rounded-full border mr-3 flex items-center justify-center`}
+                >
+                  {selectedPayment === 'my-wallet' && (
+                    <div
+                      className={`w-3 h-3 rounded-full ${
+                        selectedPayment === 'my-wallet'
+                          ? "border-main bg-main"
+                          : "border-gray-400"
+                      } `}
+                    ></div>
+                  )}
+                </div>
+              </div>
+            </div>
         </div>
       </div>
 
@@ -131,7 +183,7 @@ const Payment = () => {
           </div>
         </div>
         {/* Payment Button */}
-        <Link to={'/session/select-date'} className="w-full flex justify-center py-3 mt-4 bg-main text-white rounded-lg font-medium hover:bg-blue-700 transition-colors">
+        <Link to={'/session/select-date'} className="w-full flex justify-center py-3 mt-4 bg-main text-white rounded-lg font-medium ">
           Pay 280 EGP
         </Link>
       </div>
