@@ -31,14 +31,23 @@ A modern and responsive frontend for a Life Coaching Platform built with React. 
 ## 📁 Folder Structure
 
 src/
+
 │
+
 ├── assets/ # Static images and assets (grouped per page)
+
 ├── components/ # Reusable UI components (Navbar, Footer, Button, etc.)
+
 ├── layout/ # Layout wrapper with Navbar/Footer
+
 ├── pages/ # Main route pages (Home, About, Coaches, etc.)
+
 ├── translation/ # Language translation files
+
 ├── App.jsx # Root component
+
 └── main.jsx # Entry point
+
 
 ## 📌 Notes
 
