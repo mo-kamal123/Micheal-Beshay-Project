@@ -1,21 +1,19 @@
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { login } from "../../../store/auth-slice/auth-slice";
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { login } from '../../../store/auth-slice/auth-slice';
 
 const Login = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch()
-
+  const dispatch = useDispatch();
 
   const handleLogin = () => {
-    dispatch(login())
-    navigate("/");
+    dispatch(login());
+    navigate('/');
   };
   return (
     <div className="flex flex-col gap-5">
       <p className="text-[#666C6F] text-[14px] ">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry.
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       </p>
       <div className="flex flex-col gap-5">
         <div className="flex flex-col gap-3">
@@ -44,10 +42,7 @@ const Login = () => {
             placeholder="Enter your password"
           />
         </div>
-        <button
-          onClick={handleLogin}
-          className="bg-main w-1/2 m-auto text-white py-3 rounded-4xl"
-        >
+        <button onClick={handleLogin} className="bg-main w-1/2 m-auto text-white py-3 rounded-4xl">
           SEND
         </button>
       </div>

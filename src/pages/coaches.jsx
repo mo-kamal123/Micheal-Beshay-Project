@@ -1,10 +1,10 @@
-import PageHead from "../componants/sections/coaches/heading"
-import CoachCard from "../componants/sections/coaches/coach-card"
-import FilterBar from "../componants/sections/coaches/filter-bar"
-import Clients from "../componants/sections/shared/clients"
-import NumbersCard from "../componants/sections/shared/number-card"
-import OurCoachesSlider from "../componants/sections/shared/our-coaches"
-import WhyUs from "../componants/sections/shared/why-us"
+import PageHead from '../componants/sections/coaches/heading';
+import CoachCard from '../componants/sections/coaches/coach-card';
+import FilterBar from '../componants/sections/coaches/filter-bar';
+import Clients from '../componants/sections/shared/clients';
+import NumbersCard from '../componants/sections/shared/number-card';
+import OurCoachesSlider from '../componants/sections/shared/our-coaches';
+import WhyUs from '../componants/sections/shared/why-us';
 
 const Coaches = () => {
   return (
@@ -25,13 +25,13 @@ const Coaches = () => {
       <WhyUs />
       <Clients />
       <div className="w-[80%] m-auto my-10 grid grid-cols-4 gap-10">
-        <NumbersCard number={"4385 +"} title={"Session"} active={true} />
-        <NumbersCard number={"100"} title={"Coaches Trained"} />
-        <NumbersCard number={"13"} title={"Countries"} />
-        <NumbersCard number={"13"} title={"Years of Experience"} />
+        <NumbersCard number={'4385 +'} title={'Session'} active={true} />
+        <NumbersCard number={'100'} title={'Coaches Trained'} />
+        <NumbersCard number={'13'} title={'Countries'} />
+        <NumbersCard number={'13'} title={'Years of Experience'} />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Coaches
+export default Coaches;

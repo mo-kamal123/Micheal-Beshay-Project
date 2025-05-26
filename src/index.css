@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @layer utilities {
   .transtions {
@@ -8,21 +8,21 @@
 }
 
 @theme {
-  --font-display: "Satoshi", "sans-serif";
+  --font-display: 'Satoshi', 'sans-serif';
   --breakpoint-3xl: 120rem;
-  --color-body: #F6F8F9;
-  --color-main: #00296B;
-  --color-sec : #FDC500;
-  --color-dark: #0B0C0C;
+  --color-body: #f6f8f9;
+  --color-main: #00296b;
+  --color-sec: #fdc500;
+  --color-dark: #0b0c0c;
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
-[dir="rtl"] body{
-font-family: "Noto Kufi Arabic", sans-serif;
+[dir='rtl'] body {
+  font-family: 'Noto Kufi Arabic', sans-serif;
 }
-[dir="rtl"] {
+[dir='rtl'] {
   text-align: right;
 }

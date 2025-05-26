@@ -22,7 +22,7 @@ A modern and responsive frontend for a Life Coaching Platform built with React. 
 - **React 19**
 - **React Router DOM**
 - **Tailwind CSS**
-- **Redux toolkit** for state management 
+- **Redux toolkit** for state management
 - **i18next** for localization
 - **Prettier** for consistent code formatting
 
@@ -36,40 +36,30 @@ src/
 
 ├── assets/ # Static images and assets (grouped per page)
 
-
 ├── components/ # Reusable UI components (Navbar, Footer, Button, etc.)
-
 
 ├── layout/ # Layout wrapper with Navbar/Footer
 
-
 ├── pages/ # Main route pages (Home, About, Coaches, etc.)
-
 
 ├── translation/ # Language translation files
 
-
 ├── App.jsx # Root component
-
 
 └── main.jsx # Entry point
 
-
 ## 📌 Notes
-
 
 - All reusable components are kept in components/ directory.
 - Layout elements like Navbar and Footer are used through a single Layout.jsx.
 - Images are grouped per page for better organization.
 - This project is UI-only. API integration will follow in the next phase.
 
-
 ---
 
 ## 👨‍💻 Developer
 
 Built by [Mostafa Kamal](https://mo-kamal-portfolio.netlify.app)
-
 
 ---
 
@@ -91,3 +81,4 @@ npm run dev
 
 ---
 
+```

@@ -1,9 +1,9 @@
-import coachImg from "../../../assets/About-imgs/coach.jpg";
-import { ImCoinDollar } from "react-icons/im";
-import { MdEventSeat } from "react-icons/md";
-import { TbMessages } from "react-icons/tb";
-import { FaStar } from "react-icons/fa";
-import { Link, useLocation } from "react-router-dom";
+import coachImg from '../../../assets/About-imgs/coach.jpg';
+import { ImCoinDollar } from 'react-icons/im';
+import { MdEventSeat } from 'react-icons/md';
+import { TbMessages } from 'react-icons/tb';
+import { FaStar } from 'react-icons/fa';
+import { Link, useLocation } from 'react-router-dom';
 
 function CoachCard() {
   return (
@@ -15,9 +15,9 @@ function CoachCard() {
         <div className="w-3/4">
           <h2 className="text-main text-[20px] font-bold">Amanda Clara</h2>
           <p className="text-[#727272] text-[14px]">
-            A life coach is a professional who helps individuals set and achieve
-            personal or professional goals, improve their mindset, and create a
-            more fulfilling life. They provide guidance
+            A life coach is a professional who helps individuals set and achieve personal or
+            professional goals, improve their mindset, and create a more fulfilling life. They
+            provide guidance
           </p>
         </div>
       </div>
@@ -62,12 +62,9 @@ function CoachCard() {
           </div>
         </div>
       </div>
-        <Link
-          to={"22"}
-          className="flex bg-main text-white justify-center w-full py-3 rounded-lg"
-        >
-          Book an appointment
-        </Link>
+      <Link to={'22'} className="flex bg-main text-white justify-center w-full py-3 rounded-lg">
+        Book an appointment
+      </Link>
     </div>
   );
 }

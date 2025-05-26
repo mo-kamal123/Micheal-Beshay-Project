@@ -1,20 +1,18 @@
-import SectionTitle from "../../common/section-title";
-import banner from "../../../assets/About-imgs/banner.jpg";
-import borderdImg from "../../../assets/About-imgs/borderd_img.jpg";
-import shapeOne from "../../../assets/About-imgs/shape_1.png";
-import ShapeTwo from "../../../assets/About-imgs/shape_2.png";
+import SectionTitle from '../../common/section-title';
+import banner from '../../../assets/About-imgs/banner.jpg';
+import borderdImg from '../../../assets/About-imgs/borderd_img.jpg';
+import shapeOne from '../../../assets/About-imgs/shape_1.png';
+import ShapeTwo from '../../../assets/About-imgs/shape_2.png';
 
 const Summery = () => {
   return (
     <div className="w-[90%] m-auto flex flex-col md:flex-row items-center justify-between py-10 gap-20 md:gap-0">
       <div className="md:w-1/2 flex flex-col gap-4 md:text-left">
         <p className="text-main text-sm md:text-base">About us</p>
-        <h1 className="text-3xl md:text-5xl font-bold leading-tight">
-          What about Michael Beshay?
-        </h1>
+        <h1 className="text-3xl md:text-5xl font-bold leading-tight">What about Michael Beshay?</h1>
         <SectionTitle className="text-[#666C6F] mt-4 text-sm md:text-base">
-          Laoreet amet arcu quisque aliquam feugiat sit. Mauris quis vestibulum
-          viverra nullam lobortis et eget tortor.
+          Laoreet amet arcu quisque aliquam feugiat sit. Mauris quis vestibulum viverra nullam
+          lobortis et eget tortor.
         </SectionTitle>
       </div>
 
@@ -35,11 +33,7 @@ const Summery = () => {
             src={shapeOne}
             alt="decorative shape"
           />
-          <img
-            className="absolute -top-12 -right-10 w-16 "
-            src={ShapeTwo}
-            alt="decorative shape"
-          />
+          <img className="absolute -top-12 -right-10 w-16 " src={ShapeTwo} alt="decorative shape" />
         </div>
       </div>
     </div>

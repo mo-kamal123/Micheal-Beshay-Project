@@ -1,9 +1,9 @@
-import { useState } from "react";
-import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css";
+import { useState } from 'react';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 
 const Form = ({ type }) => {
-  const [phone, setPhone] = useState("");
+  const [phone, setPhone] = useState('');
 
   return (
     <div className="flex flex-col gap-4">
@@ -36,23 +36,23 @@ const Form = ({ type }) => {
       <div className="flex flex-col gap-3">
         <label className="block text-gray-700 mb-2">Phone number*</label>
         <PhoneInput
-          country={"eg"} 
+          country={'eg'}
           value={phone}
           onChange={setPhone}
           inputStyle={{
-            width: "100%",
-            borderRadius: "30px",
-            border: "1px solid #001f5e",
+            width: '100%',
+            borderRadius: '30px',
+            border: '1px solid #001f5e',
             padding: '0 60px',
-        }}
-        buttonStyle={{
-                border: "1px solid #001f5e",
-                borderRadius: "30px ",
-                padding: '6px',
+          }}
+          buttonStyle={{
+            border: '1px solid #001f5e',
+            borderRadius: '30px ',
+            padding: '6px',
           }}
         />
       </div>
-      {type === "contact" && (
+      {type === 'contact' && (
         <div className="flex flex-col gap-3">
           <label className="text-[#666C6F]" htmlFor="name">
             Leave your message*
@@ -67,7 +67,7 @@ const Form = ({ type }) => {
           />
         </div>
       )}
-      {type === "coach" && (
+      {type === 'coach' && (
         <div className="flex flex-col gap-3">
           <label className="text-[#666C6F]" htmlFor="name">
             How did you hear about us

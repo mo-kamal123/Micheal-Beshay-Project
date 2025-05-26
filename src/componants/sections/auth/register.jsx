@@ -1,12 +1,11 @@
-import React from "react";
-import PhoneInput from "react-phone-input-2";
+import React from 'react';
+import PhoneInput from 'react-phone-input-2';
 
 function Register() {
   return (
     <div className="flex flex-col gap-5">
       <p className="text-[#666C6F] text-[14px] ">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry.
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       </p>
       <div className="flex flex-col gap-5">
         <div className="flex flex-col gap-3">
@@ -38,18 +37,18 @@ function Register() {
         <div className="flex flex-col gap-3">
           <label className="block text-gray-700 mb-2">Phone number*</label>
           <PhoneInput
-            country={"eg"}
+            country={'eg'}
             value={''}
             inputStyle={{
-              width: "100%",
-              borderRadius: "30px",
-              border: "1px solid #001f5e",
-              padding: "0 60px",
+              width: '100%',
+              borderRadius: '30px',
+              border: '1px solid #001f5e',
+              padding: '0 60px',
             }}
             buttonStyle={{
-              border: "1px solid #001f5e",
-              borderRadius: "30px ",
-              padding: "6px",
+              border: '1px solid #001f5e',
+              borderRadius: '30px ',
+              padding: '6px',
             }}
           />
         </div>

@@ -1,9 +1,9 @@
-import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
-import LanguageDetector from "i18next-browser-languagedetector";
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
 
-import enTranslations from "../translation/en.json";
-import arTranslations from "../translation/ar.json";
+import enTranslations from '../translation/en.json';
+import arTranslations from '../translation/ar.json';
 
 i18n
   .use(LanguageDetector)
@@ -13,7 +13,7 @@ i18n
       en: { translation: enTranslations },
       ar: { translation: arTranslations },
     },
-    fallbackLng: "en",
+    fallbackLng: 'en',
     interpolation: {
       escapeValue: false,
     },

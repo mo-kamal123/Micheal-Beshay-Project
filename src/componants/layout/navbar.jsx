@@ -1,13 +1,13 @@
-import logo from "../../assets/home-imgs/logo.png";
-import { Link, NavLink } from "react-router-dom";
-import { useState } from "react";
-import { IoIosNotifications } from "react-icons/io";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import SubNavbar from "./sub-navbar";
-import { FiPhone } from "react-icons/fi";
-import { HiOutlineMail } from "react-icons/hi";
-import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
+import logo from '../../assets/home-imgs/logo.png';
+import { Link, NavLink } from 'react-router-dom';
+import { useState } from 'react';
+import { IoIosNotifications } from 'react-icons/io';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import SubNavbar from './sub-navbar';
+import { FiPhone } from 'react-icons/fi';
+import { HiOutlineMail } from 'react-icons/hi';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
   // const [loggedIn, setLogiedIn] = useState(true);
@@ -15,46 +15,41 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { t } = useTranslation();
 
-  const loggedIn = useSelector((state) => state.auth.loggedIn);
+  const loggedIn = useSelector(state => state.auth.loggedIn);
 
   const messages = [
     {
-      message:
-        "You Session will start tomorrow 29th May at 03:00 PM, Dont miss it.",
-      time: "10 h",
+      message: 'You Session will start tomorrow 29th May at 03:00 PM, Dont miss it.',
+      time: '10 h',
     },
     {
-      title: "Special offer 🥳",
-      message: " 30% for April month ",
-      time: "10 h",
+      title: 'Special offer 🥳',
+      message: ' 30% for April month ',
+      time: '10 h',
     },
     {
-      title: "Give us your rate about last session",
-      message:
-        "You Session will start tomorrow 29th May at 03:00 PM, Dont miss it.",
-      time: "10 h",
+      title: 'Give us your rate about last session',
+      message: 'You Session will start tomorrow 29th May at 03:00 PM, Dont miss it.',
+      time: '10 h',
     },
     {
-      message:
-        "You Session will start tomorrow 29th May at 03:00 PM, Dont miss it.",
-      time: "10 h",
+      message: 'You Session will start tomorrow 29th May at 03:00 PM, Dont miss it.',
+      time: '10 h',
     },
     {
-      message:
-        "You Session will start tomorrow 29th May at 03:00 PM, Dont miss it.",
-      time: "10 h",
+      message: 'You Session will start tomorrow 29th May at 03:00 PM, Dont miss it.',
+      time: '10 h',
     },
     {
-      message:
-        "You Session will start tomorrow 29th May at 03:00 PM, Dont miss it.",
-      time: "10 h",
+      message: 'You Session will start tomorrow 29th May at 03:00 PM, Dont miss it.',
+      time: '10 h',
     },
   ];
 
   return (
     <nav className="bg-body">
       {/* SubNavbar Desktop only */}
-      <div className={`${menuOpen ? "hidden" : "block"}`}>
+      <div className={`${menuOpen ? 'hidden' : 'block'}`}>
         <SubNavbar />
       </div>
 
@@ -73,50 +68,50 @@ const Navbar = () => {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `${isActive ? "text-main font-semibold" : ""} hover:text-main`
+                `${isActive ? 'text-main font-semibold' : ''} hover:text-main`
               }
             >
-              {t("navbar.home")}
+              {t('navbar.home')}
             </NavLink>
           </li>
           <li>
             <NavLink
               to="/about-us"
               className={({ isActive }) =>
-                `${isActive ? "text-main font-semibold" : ""} hover:text-main`
+                `${isActive ? 'text-main font-semibold' : ''} hover:text-main`
               }
             >
-              {t("navbar.about")}
+              {t('navbar.about')}
             </NavLink>
           </li>
           <li>
             <NavLink
               to="/coaches"
               className={({ isActive }) =>
-                `${isActive ? "text-main font-semibold" : ""} hover:text-main`
+                `${isActive ? 'text-main font-semibold' : ''} hover:text-main`
               }
             >
-              {t("navbar.coaches")}
+              {t('navbar.coaches')}
             </NavLink>
           </li>
           <li>
             <NavLink
               to="/contact-us"
               className={({ isActive }) =>
-                `${isActive ? "text-main font-semibold" : ""} hover:text-main`
+                `${isActive ? 'text-main font-semibold' : ''} hover:text-main`
               }
             >
-              {t("navbar.contact")}
+              {t('navbar.contact')}
             </NavLink>
           </li>
           <li>
             <NavLink
               to="/became-coach"
               className={({ isActive }) =>
-                `${isActive ? "text-main font-semibold" : ""} hover:text-main`
+                `${isActive ? 'text-main font-semibold' : ''} hover:text-main`
               }
             >
-              {t("navbar.becomeCoach")}
+              {t('navbar.becomeCoach')}
             </NavLink>
           </li>
         </ul>
@@ -132,25 +127,18 @@ const Navbar = () => {
             {showNoti && (
               <div className="absolute w-[300px] p-4 z-50 right-0 top-10 bg-white shadow-2xl text-black flex flex-col gap-5 rounded-2xl">
                 <h1 className=" text-[20px] ">Notification</h1>
-                <p
-                  className="absolute right-5"
-                  onClick={() => setShowNoti(!showNoti)}
-                >
+                <p className="absolute right-5" onClick={() => setShowNoti(!showNoti)}>
                   x
                 </p>
                 {messages.map((message, index) => (
                   <div key={index} className="flex justify-between gap-3 py-2">
                     <div className="flex flex-col gap-2">
                       {message.title && (
-                        <p className=" text-[12px] font-semibold ">
-                          {message.title}
-                        </p>
+                        <p className=" text-[12px] font-semibold ">{message.title}</p>
                       )}
                       <p className="text-[12px]">{message.message}</p>
                     </div>
-                    <p className="text-[12px] min-w-7 text-[#A1A1B2]">
-                      {message.time}
-                    </p>
+                    <p className="text-[12px] min-w-7 text-[#A1A1B2]">{message.time}</p>
                   </div>
                 ))}
               </div>
@@ -167,16 +155,10 @@ const Navbar = () => {
         {/* Auth or Profile */}
         {!loggedIn ? (
           <div className="hidden md:flex gap-2">
-            <Link
-              to="/auth/register"
-              className="bg-dark text-white py-2 px-4 rounded-full"
-            >
+            <Link to="/auth/register" className="bg-dark text-white py-2 px-4 rounded-full">
               Create an account
             </Link>
-            <Link
-              to="/auth"
-              className="bg-main text-white py-2 px-4 rounded-full"
-            >
+            <Link to="/auth" className="bg-main text-white py-2 px-4 rounded-full">
               Log in
             </Link>
           </div>
@@ -193,21 +175,14 @@ const Navbar = () => {
                 <div className="absolute w-[300px] p-4 z-50 right-0 top-9 bg-white shadow-2xl text-black flex flex-col gap-5 rounded-2xl">
                   <h1 className=" text-[20px] ">Notification</h1>
                   {messages.map((message, index) => (
-                    <div
-                      key={index}
-                      className="flex justify-between gap-3 py-2"
-                    >
+                    <div key={index} className="flex justify-between gap-3 py-2">
                       <div className="flex flex-col gap-2">
                         {message.title && (
-                          <p className=" text-[12px] font-semibold ">
-                            {message.title}
-                          </p>
+                          <p className=" text-[12px] font-semibold ">{message.title}</p>
                         )}
                         <p className="text-[12px]">{message.message}</p>
                       </div>
-                      <p className="text-[12px] min-w-7 text-[#A1A1B2]">
-                        {message.time}
-                      </p>
+                      <p className="text-[12px] min-w-7 text-[#A1A1B2]">{message.time}</p>
                     </div>
                   ))}
                 </div>
@@ -217,7 +192,7 @@ const Navbar = () => {
               <p className="bg-sec w-8 h-8 flex items-center justify-center text-white font-[500] rounded-full">
                 E
               </p>
-              <p className="text-[16px] font-[600]">{t("navbar.profile")}</p>
+              <p className="text-[16px] font-[600]">{t('navbar.profile')}</p>
               <FaArrowRight />
             </Link>
           </div>
@@ -240,7 +215,7 @@ const Navbar = () => {
               <p>|</p>
               <a className="text-[12px] flex items-center gap-3" href="#">
                 <HiOutlineMail />
-                admin@michaelbeshay.com{" "}
+                admin@michaelbeshay.com{' '}
               </a>
             </div>
             <div>
@@ -291,9 +266,7 @@ const Navbar = () => {
                   <p className="bg-sec w-8 h-8 flex items-center justify-center text-white font-[500] rounded-full">
                     E
                   </p>
-                  <p className="text-[16px] font-[600]">
-                    {t("navbar.profile")}
-                  </p>
+                  <p className="text-[16px] font-[600]">{t('navbar.profile')}</p>
                   <FaArrowRight />
                 </Link>
               </div>

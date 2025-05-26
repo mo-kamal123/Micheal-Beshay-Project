@@ -9,6 +9,6 @@ const ScrollToTop = () => {
   }, [pathname]);
 
   return null; // This component doesn’t render anything
-}
+};
 
-export default ScrollToTop
+export default ScrollToTop;

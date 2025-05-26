@@ -1,5 +1,5 @@
-import { AiOutlineSignature } from "react-icons/ai";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { AiOutlineSignature } from 'react-icons/ai';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 const CoachFeedback = () => {
   return (
@@ -11,10 +11,9 @@ const CoachFeedback = () => {
           <AiOutlineSignature />
         </p>
         <p className="text-[20px]">
-          We have been operating for over an providin top-notch services to our
-          clients and build strong track record in the industry.We have been
-          operating for over a decad providi ina top-notch We have been
-          operating
+          We have been operating for over an providin top-notch services to our clients and build
+          strong track record in the industry.We have been operating for over a decad providi ina
+          top-notch We have been operating
         </p>
         <div className="mt-2">
           <p className="text-[22px] font-bold">Client name</p>

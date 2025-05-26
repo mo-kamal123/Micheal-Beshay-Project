@@ -1,4 +1,4 @@
-import banner from '../../../assets/About-imgs/become_coach.png'
+import banner from '../../../assets/About-imgs/become_coach.png';
 import Form from '../../common/form';
 function BecomeCoachForm() {
   return (
@@ -10,12 +10,17 @@ function BecomeCoachForm() {
           src={banner}
           alt="about-banner"
         />
-        <div className='my-10'>
-            <div>
-                <h1 className='text-[40px]'>Became coach</h1>
-                <p>Enim tempor eget pharetra facilisis sed maecenas adipiscing. Eu leo molestie vel, ornare non id blandit netus.</p>
-            </div>
-            <div><Form type={'coach'}/></div>
+        <div className="my-10">
+          <div>
+            <h1 className="text-[40px]">Became coach</h1>
+            <p>
+              Enim tempor eget pharetra facilisis sed maecenas adipiscing. Eu leo molestie vel,
+              ornare non id blandit netus.
+            </p>
+          </div>
+          <div>
+            <Form type={'coach'} />
+          </div>
         </div>
       </div>
     </div>

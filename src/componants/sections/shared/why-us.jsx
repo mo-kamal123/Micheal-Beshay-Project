@@ -1,11 +1,11 @@
-import { useTranslation } from "react-i18next";
-import why_us from "../../../assets/home-imgs/why_us.jpg";
-import SectionTitle from "../../common/section-title";
+import { useTranslation } from 'react-i18next';
+import why_us from '../../../assets/home-imgs/why_us.jpg';
+import SectionTitle from '../../common/section-title';
 
 function WhyUs() {
   const { t } = useTranslation();
 
-  const features = t("whyChooseUs.features", { returnObjects: true });
+  const features = t('whyChooseUs.features', { returnObjects: true });
 
   return (
     <div>
@@ -15,13 +15,11 @@ function WhyUs() {
         </div>
         <div className="w-[90%] mb-10 flex flex-col gap-2 md:w-1/2 md:mb-0">
           <SectionTitle className="text-[14px] ml-12 md:text-[23px] before:bg-white">
-            {t("whyChooseUs.title")}
+            {t('whyChooseUs.title')}
           </SectionTitle>
-          <h1 className="text-[24px] md:text-[50px]">
-            {t("whyChooseUs.heading")}
-          </h1>
+          <h1 className="text-[24px] md:text-[50px]">{t('whyChooseUs.heading')}</h1>
           <p className="text-[16px] leading-7 mt-3 md:text-[18px]">
-            {t("whyChooseUs.description")}
+            {t('whyChooseUs.description')}
           </p>
         </div>
       </div>
@@ -36,7 +34,7 @@ function WhyUs() {
             <div key={index} className="my-12 md:my-10">
               <div className="flex items-center ">
                 <p className="text-[#5A717C] text-[24px] md:text-[56px]">
-                  {String(index + 1).padStart(2, "0")}
+                  {String(index + 1).padStart(2, '0')}
                 </p>
                 <SectionTitle className="text-[16px] ml-16 md:text-[24px] before:bg-main">
                   {feature.title}
