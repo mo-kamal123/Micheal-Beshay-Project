@@ -1,12 +1,78 @@
-# React + Vite
+# 🧠 Life Coaching Platform - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive frontend for a Life Coaching Platform built with React. The platform enables users to explore certified coaches, book appointments, manage their profiles, and much more.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🏠 Fully responsive pages (Home, About, Contact, etc.)
+- 👨‍🏫 Coaches listing with detailed coach profiles
+- 📆 Book appointment system UI
+- 🌐 Bilingual support (English / Arabic)
+- 📥 Contact form and Become a Coach request
+- 🔐 Authentication UI (Login / Register)
+- 🛎️ Notification center (UI only)
+- 📧 Email template (designed for verficatoin emails)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+- **React 19**
+- **React Router DOM**
+- **Tailwind CSS**
+- **Redux toolkit** for state management 
+- **i18next** for localization
+- **Prettier** for consistent code formatting
+
+---
+
+## 📁 Folder Structure
+
+src/
+│
+├── assets/ # Static images and assets (grouped per page)
+├── components/ # Reusable UI components (Navbar, Footer, Button, etc.)
+├── layout/ # Layout wrapper with Navbar/Footer
+├── pages/ # Main route pages (Home, About, Coaches, etc.)
+├── translation/ # Language translation files
+├── App.jsx # Root component
+└── main.jsx # Entry point
+
+## 📌 Notes
+
+
+- All reusable components are kept in components/ directory.
+- Layout elements like Navbar and Footer are used through a single Layout.jsx.
+- Images are grouped per page for better organization.
+- This project is UI-only. API integration will follow in the next phase.
+
+
+---
+
+## 👨‍💻 Developer
+
+Built by [Mostafa Kamal](https://mo-kamal-portfolio.netlify.app)
+
+
+---
+
+## ⚙️ Setup & Run Locally
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/mo-kamal123/Micheal-Beshay-Project.git
+
+# 2. Navigate to project directory
+cd Micheal-Beshay-Project
+
+# 3. Install dependencies
+npm install
+
+# 4. Start the development server
+npm run dev
+
+
+---
+
