@@ -1,23 +1,43 @@
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../../../store/auth-slice/auth-slice';
+import { useState } from 'react';
 
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [loginData, setLoginData] = useState({ username: '', password: '' });
+  const [disabled, setDisables] = useState(true);
 
-  const handleLogin = () => {
-    dispatch(login());
-    navigate('/');
+  const handleChange = (key, e) => {
+    const value = e.target.value;
+    const newLoginData = { ...loginData, [key]: value };
+    setLoginData(newLoginData);
+  
+    if (newLoginData.username && newLoginData.password) {
+      setDisables(false);
+    } else {
+      setDisables(true);
+    }
   };
+
+  const handleLogin = e => {
+    e.preventDefault();
+    if (loginData.username && loginData.password) {
+      console.log(loginData);
+      dispatch(login());
+      navigate('/');
+    }
+  };
+  
   return (
     <div className="flex flex-col gap-5">
       <p className="text-[#666C6F] text-[14px] ">
         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       </p>
-      <div className="flex flex-col gap-5">
+      <form onSubmit={handleLogin} className="flex flex-col gap-5">
         <div className="flex flex-col gap-3">
-          <label className="text-[#666C6F]" htmlFor="name">
+          <label className="text-[#666C6F]" htmlFor="email">
             Email*
           </label>
           <input
@@ -27,10 +47,11 @@ const Login = () => {
             name="email"
             id="email"
             placeholder="Enter your email"
+            onChange={e => handleChange('username', e)}
           />
         </div>
         <div className="flex flex-col gap-3">
-          <label className="text-[#666C6F]" htmlFor="name">
+          <label className="text-[#666C6F]" htmlFor="password">
             Password*
           </label>
           <input
@@ -40,12 +61,13 @@ const Login = () => {
             name="password"
             id="password"
             placeholder="Enter your password"
+            onChange={e => handleChange('password', e)}
           />
         </div>
-        <button onClick={handleLogin} className="bg-main w-1/2 m-auto text-white py-3 rounded-4xl">
+        <button disabled={disabled} className="bg-main w-1/2 m-auto text-white py-3 rounded-4xl">
           SEND
         </button>
-      </div>
+      </form>
     </div>
   );
 };
