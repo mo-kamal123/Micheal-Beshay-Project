@@ -31,7 +31,9 @@ A modern and responsive frontend for a Life Coaching Platform built with React. 
 ## 📁 Folder Structure
 
 src/
+
 │
+
 ├── assets/ # Static images and assets (grouped per page)
 
 
