@@ -1,10 +1,10 @@
 import { render, screen } from '@testing-library/react';
-import Register from './register';
+import Register from '../componants/sections/auth/register';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import { store } from '../../../store/store';
+import { store } from '../store/store';
 import userEvent from '@testing-library/user-event';
-import Navbar from '../../layout/navbar';
+import Navbar from '../componants/layout/navbar';
 
 const renderWithProviders = ui =>
   render(
