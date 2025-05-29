@@ -13,7 +13,7 @@ const Login = () => {
     const value = e.target.value;
     const newLoginData = { ...loginData, [key]: value };
     setLoginData(newLoginData);
-  
+
     if (newLoginData.username && newLoginData.password) {
       setDisables(false);
     } else {
@@ -29,7 +29,7 @@ const Login = () => {
       navigate('/');
     }
   };
-  
+
   return (
     <div className="flex flex-col gap-5">
       <p className="text-[#666C6F] text-[14px] ">
