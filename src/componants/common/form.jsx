@@ -3,8 +3,18 @@ import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 
 const Form = ({ type }) => {
-  const [phone, setPhone] = useState('');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+    knowUs: '',
+  });
 
+  const handleChange = (key, e) => {
+    const value = e?.target?.value || e;
+    setFormData(prev => ({ ...prev, [key]: value }));
+  };
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col gap-3">
@@ -18,6 +28,7 @@ const Form = ({ type }) => {
           name="name"
           id="name"
           placeholder="Enter your name"
+          onChange={e => handleChange('name', e)}
         />
       </div>
       <div className="flex flex-col gap-3">
@@ -31,14 +42,17 @@ const Form = ({ type }) => {
           name="name"
           id="name"
           placeholder="Enter your Email"
+          onChange={e => handleChange('email', e)}
         />
       </div>
       <div className="flex flex-col gap-3">
         <label className="block text-gray-700 mb-2">Phone number*</label>
         <PhoneInput
           country={'eg'}
-          value={phone}
-          onChange={setPhone}
+          value={''}
+          onChange={value => {
+            handleChange('phone', value);
+          }}
           inputStyle={{
             width: '100%',
             borderRadius: '30px',
@@ -64,6 +78,7 @@ const Form = ({ type }) => {
             name="name"
             id="name"
             placeholder="leave your message"
+            onChange={e => handleChange('message', e)}
           />
         </div>
       )}
@@ -79,6 +94,7 @@ const Form = ({ type }) => {
             name="name"
             id="name"
             placeholder="Facebook, instagram or google ads"
+            onChange={e => handleChange('knowUs', e)}
           />
         </div>
       )}

@@ -7,10 +7,17 @@ import SectionTitle from '../../common/section-title';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import PhoneInput from 'react-phone-input-2';
+import { useState } from 'react';
 
 const FreeSession = ({ getSession }) => {
   const { t } = useTranslation();
   const questions = t('freeSession.questions', { returnObjects: true });
+  const [freeSession, setFreeSession] = useState({ email: '', phone: '' });
+
+  const handleChange = (key, e) => {
+    const value = e?.target?.value || e;
+    setFreeSession(prev => ({ ...prev, [key]: value }));
+  };
 
   return (
     <div className="w-[95%] md:w-[80%] m-auto my-20 flex items-center flex-wrap md:flex-nowrap gap-16">
@@ -78,13 +85,14 @@ const FreeSession = ({ getSession }) => {
                 name="name"
                 id="name"
                 placeholder="Enter your Email"
+                onChange={e => handleChange('email', e)}
               />
             </div>
             <div className="flex flex-col gap-3">
               <label className="block text-gray-700 mb-2">Phone number*</label>
               <PhoneInput
                 country={'eg'}
-                // value={'00000'}
+                onChange={value => handleChange('phone', value)}
                 inputStyle={{
                   width: '100%',
                   borderRadius: '30px',

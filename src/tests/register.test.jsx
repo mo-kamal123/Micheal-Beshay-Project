@@ -51,10 +51,12 @@ describe('register page', () => {
 
   test('should navigate to home page when button clicked ', async () => {
     // arrange
-    renderWithProviders(<>
-    <Navbar />
-    <Register />
-    </>);
+    renderWithProviders(
+      <>
+        <Navbar />
+        <Register />
+      </>
+    );
 
     // act
     await userEvent.type(screen.getByLabelText(/email/i), 'test@gmail.com');
@@ -64,6 +66,6 @@ describe('register page', () => {
     await userEvent.click(screen.getByRole('button', { name: /create an account/i }));
     // screen.debug();
     // assert
-    expect(screen.getByRole('link', {name: /navbar.profile/i})).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /navbar.profile/i })).toBeInTheDocument();
   });
 });

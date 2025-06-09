@@ -1,6 +1,13 @@
+import { useState } from 'react';
 import CoachInfo from '../coach-profile/coach-info';
 
 function RateSesstion() {
+  const [feedback, setFeedback] = useState({ opinion: '', message: '' });
+
+  const handleChange = (key, e) => {
+    const value = e.target.value;
+    setFeedback(prev => ({ ...prev, [key]: value }));
+  };
   return (
     <div className=" bg-body">
       <CoachInfo />
@@ -19,6 +26,7 @@ function RateSesstion() {
             name="name"
             id="name"
             placeholder="Enter your name"
+            onChange={e => handleChange('opinion', e)}
           />
         </div>
         <div>
@@ -30,6 +38,7 @@ function RateSesstion() {
             name="name"
             id="name"
             placeholder="leave your message"
+            onChange={e => handleChange('message', e)}
           />
         </div>
         <button className="bg-main text-white py-3 rounded-4xl">SEND</button>

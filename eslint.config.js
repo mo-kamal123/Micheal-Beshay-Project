@@ -12,7 +12,8 @@ export default [
       globals: {
         ...globals.browser,
         ...globals.jest,
-      },      parserOptions: {
+      },
+      parserOptions: {
         ecmaVersion: 'latest',
         ecmaFeatures: { jsx: true },
         sourceType: 'module',

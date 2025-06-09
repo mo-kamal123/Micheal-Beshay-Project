@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
 
-const FilterOptions = ({ type, options }) => {
+const FilterOptions = ({ type, filter, options, onChange, selected }) => {
   const [isOpened, setIsOpened] = useState(false);
-  const [selected, setSelected] = useState('');
 
   return (
     <div
@@ -23,8 +22,8 @@ const FilterOptions = ({ type, options }) => {
           {options.map((option, index) => (
             <p
               key={index}
-              className={`p-4 hover:bg-main hover:text-white ${selected === option ? 'bg-main text-white' : ''} cursor-pointer transition-colors duration-200`}
-              onClick={() => setSelected(option)}
+              className={`p-4 hover:bg-main hover:text-white ${selected[filter] === option ? 'bg-main text-white' : ''} cursor-pointer transition-colors duration-200`}
+              onClick={() => onChange(filter, option)}
             >
               {option}
             </p>

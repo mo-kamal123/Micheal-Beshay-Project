@@ -40,7 +40,7 @@ const ContactForm = () => {
         </div>
       </div>
       <div className="w-full md:w-[30%] bg-main relative">
-        <div className=" w-[90%] m-auto h-[200px] md:h-[600px] rounded-4xl -mb-9 mt-5 overflow-hidden relative md:mb-0 md:mt-0 md:absolute md:top-1/2 md:right-[40px] md:w-[400px] md:h-[500px]  md:transform md:-translate-y-1/2">
+        <div className=" w-[90%] m-auto h-[200px]  rounded-4xl -mb-9 mt-5 overflow-hidden relative md:mb-0 md:mt-0 md:absolute md:top-1/2 md:right-[40px] md:w-[400px] md:h-[500px]  md:transform md:-translate-y-1/2">
           <img className="w-full h-full object-cover" src={banner} alt="contact-img" />
         </div>
       </div>
