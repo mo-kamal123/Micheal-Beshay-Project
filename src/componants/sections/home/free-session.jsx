@@ -12,8 +12,12 @@ import { useState } from 'react';
 const FreeSession = ({ getSession }) => {
   const { t } = useTranslation();
   const questions = t('freeSession.questions', { returnObjects: true });
-  const [freeSession, setFreeSession] = useState({ email: '', phone: '' });
-
+  const [freeSession, setFreeSession] = useState({ email: '', phone: '' }); // Initialize state for free session form data
+  /**
+   *  Handles input changes for the free session form.
+   * @param {string} key - The field name to update (e.g., 'email', 'phone').
+   * @param {string} e - The event object from input change or direct value for phone.
+   */
   const handleChange = (key, e) => {
     const value = e?.target?.value || e;
     setFreeSession(prev => ({ ...prev, [key]: value }));

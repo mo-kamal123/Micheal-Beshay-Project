@@ -7,6 +7,7 @@ import OurCoachesSlider from '../componants/sections/shared/our-coaches';
 import WhyUs from '../componants/sections/shared/why-us';
 
 const Coaches = () => {
+  // Sample data for coaches, this will replaced with actual data from an API or database
   const coaches = [
     {
       id: 1,

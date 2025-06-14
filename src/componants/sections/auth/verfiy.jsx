@@ -1,30 +1,52 @@
 import { useEffect, useRef, useState } from 'react';
 
+/**
+ * The Verify component handles the verification process by allowing users to input a 6-digit code.
+ * It includes a countdown timer and input field navigation for a seamless user experience.
+ */
 const Verify = () => {
-  const [code, setCode] = useState(new Array(6).fill(''));
-  const [timer, setTimer] = useState(59);
-  const inputsRef = useRef([]);
+  const [code, setCode] = useState(new Array(6).fill('')); // State to store the 6-digit code
+  const [timer, setTimer] = useState(59); // Countdown timer state
+  const inputsRef = useRef([]); // Ref to manage focus on input fields
 
+  /**
+   * useEffect hook to start a countdown timer.
+   * The timer decreases every 500ms until it reaches 0.
+   */
   useEffect(() => {
     const countdown = setInterval(() => {
       setTimer(prev => (prev > 0 ? prev - 1 : 0));
     }, 500);
-    return () => clearInterval(countdown);
+    return () => clearInterval(countdown); // Cleanup the interval on component unmount
   }, []);
 
+  /**
+   * Handles changes in the input fields.
+   *
+   * @param {string} value - The value entered in the input field.
+   * @param {number} index - The index of the input field being updated.
+   * Ensures only digits are entered, updates the code state, and moves focus to the next input field.
+   */
   const handleChange = (value, index) => {
-    if (!/^\d*$/.test(value)) return; // Only digits
+    if (!/^\d*$/.test(value)) return; // Only allow digits
     const newCode = [...code];
     newCode[index] = value;
     setCode(newCode);
     if (value && index < 5) {
-      inputsRef.current[index + 1]?.focus();
+      inputsRef.current[index + 1]?.focus(); // Move focus to the next input field
     }
   };
 
+  /**
+   * Handles keydown events for the input fields.
+   *
+   * @param {Object} e - The keyboard event object.
+   * @param {number} index - The index of the input field where the event occurred.
+   * Moves focus to the previous input field when Backspace is pressed and the current field is empty.
+   */
   const handleKeyDown = (e, index) => {
     if (e.key === 'Backspace' && !code[index] && index > 0) {
-      inputsRef.current[index - 1]?.focus();
+      inputsRef.current[index - 1]?.focus(); // Move focus to the previous input field
     }
   };
 

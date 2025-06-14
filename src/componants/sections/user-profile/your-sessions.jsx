@@ -2,7 +2,7 @@ import { useState } from 'react';
 import NextSession from './next-session';
 import LastSession from './last-session';
 const YourSesstions = () => {
-  const [active, setActive] = useState('next');
+  const [active, setActive] = useState('next'); // Default active tab is 'next'
   return (
     <div className="flex flex-col md:flex-row justify-between gap-10">
       <div className="bg-white h-fit md:w-1/4 p-6 flex md:flex-col items-center justify-between gap-5 rounded-4xl">

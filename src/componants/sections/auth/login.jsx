@@ -9,6 +9,14 @@ const Login = () => {
   const [loginData, setLoginData] = useState({ username: '', password: '' });
   const [disabled, setDisables] = useState(true);
 
+  /**
+   * Handles changes to the login form fields.
+   *
+   * @param {string} key - The key representing the field being updated (e.g., 'username' or 'password').
+   * @param {Object} e - The event object from the input field.
+   * Updates the login data state with the new value and enables/disables the submit button
+   * based on whether both username and password fields are filled.
+   */
   const handleChange = (key, e) => {
     const value = e.target.value;
     const newLoginData = { ...loginData, [key]: value };
@@ -21,6 +29,13 @@ const Login = () => {
     }
   };
 
+  /**
+   * Handles the login form submission.
+   *
+   * @param {Object} e - The event object from the form submission.
+   * Prevents the default form submission behavior, validates the login data,
+   * dispatches the login action, and navigates to the home page if successful.
+   */
   const handleLogin = e => {
     e.preventDefault();
     if (loginData.username && loginData.password) {

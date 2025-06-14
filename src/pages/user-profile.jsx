@@ -5,10 +5,10 @@ import YourWallet from '../componants/sections/user-profile/your-wallet';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 
 const UserProfile = () => {
-  const [active, setActive] = useState('profile');
+  const [active, setActive] = useState('profile'); // Default active tab is 'profile'
   const { pathname } = useLocation(); // Gets current URL path
-  const currRoute = pathname;
-  console.log(currRoute);
+  const currRoute = pathname; // Checks if the current route is the profile route
+  console.log(currRoute); // Debug log to check the current route
   return (
     <div className="bg-body">
       <div className="w-[95%] md:w-[80%] m-auto py-20 flex flex-col gap-10">

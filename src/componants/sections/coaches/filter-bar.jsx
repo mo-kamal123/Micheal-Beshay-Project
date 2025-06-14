@@ -2,8 +2,13 @@ import { useState } from 'react';
 import FilterOptions from './filter-options';
 
 const FilterBar = () => {
-  const [filter, setFilter] = useState({ rate: '', gender: '', sessions: '' });
+  const [filter, setFilter] = useState({ rate: '', gender: '', sessions: '' }); // Initial state for filter options
 
+  /**
+   * Function to handle filter changes
+   * @param {string} key - the key of selected filter object
+   * @param {string} option - the selected option for the key in filter object
+   **/
   const changeFilter = (key, option) => {
     setFilter(prev => ({ ...prev, [key]: option }));
     console.log(key, option);

@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import coach from '../../../assets/About-imgs/coach.jpg';
 import { Link } from 'react-router-dom';
 const DateSelection = () => {
-  const [selectedMonth, setSelectedMonth] = useState('July 2025');
-  const [selectedDate, setSelectedDate] = useState('2025-07-16');
-  const [selectedTime, setSelectedTime] = useState('9:00pm');
-
+  const [selectedMonth, setSelectedMonth] = useState('July 2025'); // Default selected month
+  const [selectedDate, setSelectedDate] = useState('2025-07-16'); // Default selected date
+  const [selectedTime, setSelectedTime] = useState('9:00pm'); // Default selected time
+  // Sample data for dates and times
   const dates = [
     { day: 'Sun', date: 16 },
     { day: 'Mon', date: 17 },

@@ -8,6 +8,7 @@ const OurCoachesSlider = () => {
   const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  // Array of slides with coach details
   const slides = [
     {
       id: 1,
@@ -41,6 +42,7 @@ const OurCoachesSlider = () => {
     },
   ];
 
+  // Function to handle next and previous slide navigation
   const nextSlide = () => {
     setCurrentSlide(prev => (prev === slides.length - 1 ? 0 : prev + 1));
   };

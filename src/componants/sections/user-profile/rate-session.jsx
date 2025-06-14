@@ -2,8 +2,13 @@ import { useState } from 'react';
 import CoachInfo from '../coach-profile/coach-info';
 
 function RateSesstion() {
-  const [feedback, setFeedback] = useState({ opinion: '', message: '' });
+  const [feedback, setFeedback] = useState({ opinion: '', message: '' }); // Initial state for feedback
 
+  /**
+   * Handles input changes and updates the feedback state.
+   * @param {string} key - The field name to update (e.g., 'opinion', 'message').
+   * @param {Event} e - The event object from input change.
+   **/
   const handleChange = (key, e) => {
     const value = e.target.value;
     setFeedback(prev => ({ ...prev, [key]: value }));

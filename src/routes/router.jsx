@@ -25,12 +25,13 @@ import YourSesstions from '../componants/sections/user-profile/your-sessions';
 import YourWallet from '../componants/sections/user-profile/your-wallet';
 import { ProtectedRoute } from './protected-routes';
 
+// Define the router with all routes and their components
 export const router = createBrowserRouter([
   {
     path: '/',
     element: <RootLayout />,
     children: [
-      // Public Routes
+      // Public Routes (Home + About Us + Coaches + Become Coach + Contact Us)
       { index: true, element: <Home /> },
       { path: 'about-us', element: <AboutUs /> },
       { path: 'free-session', element: <FreeSession getSession={true} /> },

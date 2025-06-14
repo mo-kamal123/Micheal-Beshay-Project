@@ -6,7 +6,7 @@ import fawry from '../../../assets/coach-imgs/Fawry.png';
 import aman from '../../../assets/coach-imgs/Aman.png';
 
 const RechargeWallet = () => {
-  const [selectedPayment, setSelectedPayment] = useState('visa');
+  const [selectedPayment, setSelectedPayment] = useState('visa'); // State to manage selected payment method
 
   return (
     <div className="bg-body">

@@ -5,7 +5,7 @@ import { useState } from 'react';
 const AuthLayout = () => {
   const [active, setActive] = useState('login');
   const { pathname } = useLocation(); // Gets current URL path
-  const isRegisterRoute = pathname === '/auth/register';
+  const isRegisterRoute = pathname === '/auth/register'; // Checks if the current route is the register route
 
   return (
     <div className="flex justify-between min-h-svh w-[90%] m-auto md:p-10">

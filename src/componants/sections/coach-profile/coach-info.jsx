@@ -9,7 +9,7 @@ import { Link, useLocation } from 'react-router-dom';
 const CoachInfo = () => {
   const { pathname } = useLocation(); // Gets current URL path
   const currRoute = pathname;
-  console.log(currRoute);
+  console.log(currRoute); // TODO: Remove debug log
   return (
     <div className="bg-main py-10 text-white">
       <div className="container mx-auto px-4">

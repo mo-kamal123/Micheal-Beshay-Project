@@ -8,6 +8,7 @@ import userEvent from '@testing-library/user-event';
 
 const renderWithProviders = ui =>
   render(
+    // Wrap the component with Redux Provider and BrowserRouter
     <Provider store={store}>
       <BrowserRouter>{ui}</BrowserRouter>
     </Provider>
