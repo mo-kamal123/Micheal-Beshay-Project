@@ -1,22 +1,32 @@
-import logo from '../../assets/home-imgs/logo.png';
 import { Link, NavLink } from 'react-router-dom';
 import { useState } from 'react';
-import { IoIosNotifications } from 'react-icons/io';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import SubNavbar from './sub-navbar';
-import { FiPhone } from 'react-icons/fi';
-import { HiOutlineMail } from 'react-icons/hi';
-import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { FiPhone } from 'react-icons/fi';
+import { IoIosNotifications } from 'react-icons/io';
+import { HiOutlineMail } from 'react-icons/hi';
+import logo from '../../assets/home-imgs/logo.png';
+import SubNavbar from './sub-navbar';
 
 const Navbar = () => {
-  // const [loggedIn, setLogiedIn] = useState(true);
   const [showNoti, setShowNoti] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { t } = useTranslation();
 
+  // Get loggedIn state from Redux store
   const loggedIn = useSelector(state => state.auth.loggedIn);
 
+  // Define navigation links
+  const links = [
+    { title: 'navbar.home', path: '/' },
+    { title: 'navbar.about', path: '/about-us' },
+    { title: 'navbar.coaches', path: '/coaches' },
+    { title: 'navbar.contact', path: '/contact-us' },
+    { title: 'navbar.becomeCoach', path: '/became-coach' },
+  ];
+
+  // Sample messages for notifications
   const messages = [
     {
       message: 'You Session will start tomorrow 29th May at 03:00 PM, Dont miss it.',
@@ -64,56 +74,19 @@ const Navbar = () => {
 
         {/* Desktop Nav */}
         <ul className="hidden md:flex items-center gap-5 text-[#666C6F]">
-          <li>
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                `${isActive ? 'text-main font-semibold' : ''} hover:text-main`
-              }
-            >
-              {t('navbar.home')}
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/about-us"
-              className={({ isActive }) =>
-                `${isActive ? 'text-main font-semibold' : ''} hover:text-main`
-              }
-            >
-              {t('navbar.about')}
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/coaches"
-              className={({ isActive }) =>
-                `${isActive ? 'text-main font-semibold' : ''} hover:text-main`
-              }
-            >
-              {t('navbar.coaches')}
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/contact-us"
-              className={({ isActive }) =>
-                `${isActive ? 'text-main font-semibold' : ''} hover:text-main`
-              }
-            >
-              {t('navbar.contact')}
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/became-coach"
-              className={({ isActive }) =>
-                `${isActive ? 'text-main font-semibold' : ''} hover:text-main`
-              }
-            >
-              {t('navbar.becomeCoach')}
-            </NavLink>
-          </li>
+          {links.map((link, index) => (
+            // Map through links and create NavLink for each in larger screens
+            <li key={index}>
+              <NavLink
+                to={link.path}
+                className={({ isActive }) =>
+                  `${isActive ? 'text-main font-semibold' : ''} hover:text-main`
+                }
+              >
+                {t(link.title)}
+              </NavLink>
+            </li>
+          ))}
         </ul>
 
         {/* Mobile Menu Toggle */}
@@ -124,12 +97,14 @@ const Navbar = () => {
             className="relative bg-main rounded-full "
           >
             <IoIosNotifications className="text-4xl bg-main text-white p-1 rounded-full" />
+            {/* Notification Popup */}
             {showNoti && (
               <div className="absolute w-[300px] p-4 z-50 right-0 top-10 bg-white shadow-2xl text-black flex flex-col gap-5 rounded-2xl">
                 <h1 className=" text-[20px] ">Notification</h1>
                 <p className="absolute right-5" onClick={() => setShowNoti(!showNoti)}>
                   x
                 </p>
+                {/* Display messages */}
                 {messages.map((message, index) => (
                   <div key={index} className="flex justify-between gap-3 py-2">
                     <div className="flex flex-col gap-2">
@@ -154,6 +129,7 @@ const Navbar = () => {
 
         {/* Auth or Profile */}
         {!loggedIn ? (
+          // Authentication Links
           <div className="hidden md:flex gap-2">
             <Link to="/auth/register" className="bg-dark text-white py-2 px-4 rounded-full">
               Create an account
@@ -163,6 +139,7 @@ const Navbar = () => {
             </Link>
           </div>
         ) : (
+          // Profile Link with Notifications
           <div className="hidden md:flex items-center gap-5">
             <div
               onMouseEnter={() => setShowNoti(true)}
@@ -171,9 +148,11 @@ const Navbar = () => {
               className="relative"
             >
               <IoIosNotifications className="text-4xl bg-main text-white p-1 rounded-full" />
+              {/* Notification Popup */}
               {showNoti && (
                 <div className="absolute w-[300px] p-4 z-50 right-0 top-9 bg-white shadow-2xl text-black flex flex-col gap-5 rounded-2xl">
                   <h1 className=" text-[20px] ">Notification</h1>
+                  {/* Display messages */}
                   {messages.map((message, index) => (
                     <div key={index} className="flex justify-between gap-3 py-2">
                       <div className="flex flex-col gap-2">
@@ -222,24 +201,17 @@ const Navbar = () => {
               <img className="w-16 rounded-full" src={logo} alt="logo" />
             </div>
             <div className="flex flex-col gap-10">
-              <NavLink to="/" onClick={() => setMenuOpen(false)}>
-                Home
-              </NavLink>
-              <NavLink to="/about-us" onClick={() => setMenuOpen(false)}>
-                About Us
-              </NavLink>
-              <NavLink to="/coaches" onClick={() => setMenuOpen(false)}>
-                Coaches
-              </NavLink>
-              <NavLink to="/contact-us" onClick={() => setMenuOpen(false)}>
-                Contact Us
-              </NavLink>
-              <NavLink to="/became-coach" onClick={() => setMenuOpen(false)}>
-                Become Coach
-              </NavLink>
+              {links.map((link, index) => (
+              // Map through links and create NavLink for each in mobile menu
+                <NavLink key={index} to={link.path} onClick={() => setMenuOpen(false)}>
+                  {t(link.title)}
+                </NavLink>
+              ))}
             </div>
 
+            {/* Authentication or Profile Links in Mobile Menu */}
             {!loggedIn ? (
+              // Authentication Links
               <>
                 <Link
                   to="/auth/register"
@@ -257,6 +229,7 @@ const Navbar = () => {
                 </Link>
               </>
             ) : (
+              // Profile Link
               <div className="flex items-center gap-5 bg-[#E9EBEF] w-fit text-black p-5 rounded-4xl">
                 <Link
                   to="/profile"
