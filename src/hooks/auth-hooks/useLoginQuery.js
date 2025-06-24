@@ -4,7 +4,7 @@ import { changeStorage } from "../../utils/change-local-storage";
 
 
 // Custom hook for user login using React Query's useMutation
-export const  useLogin = () => {
+export const  useLoginQuery = () => {
     return useMutation({
         mutationFn: loginUser,
         onSuccess: (data) => {
