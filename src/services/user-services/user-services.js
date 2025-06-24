@@ -1,4 +1,4 @@
-import api from "../axios-global"
+import { api } from "../axios-global"
 
 export const userServices = {
     getUserData: async (id) => {
