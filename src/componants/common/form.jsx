@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 
-const Form = ({ type }) => {
+const Form = ({ type, mutate, isPending, isError, isSuccess }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -11,6 +11,8 @@ const Form = ({ type }) => {
     knowUs: '',
   }); // Initial state for form data
 
+  // Reference to the form element for resetting after submission
+  const formRef = useRef()
   /**
    * Handles input changes and updates the form data state.
    * @param {string} key - The field name to update (e.g., 'name', 'email', 'phone', 'message', 'knowUs').
@@ -21,8 +23,21 @@ const Form = ({ type }) => {
     setFormData(prev => ({ ...prev, [key]: value }));
   };
 
+  
+  // Handles form submission, prevents default behavior, and calls the mutate function with form data.
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (formData.name || formData.email || formData.phone) {
+      mutate(formData)
+    }
+    // Reset the form after submission
+    if(isSuccess) {
+      formRef.current.reset()
+      setFormData({phone: '+20'})
+    }
+  }
   return (
-    <div className="flex flex-col gap-4">
+    <form ref={formRef} onSubmit={(e) => handleSubmit(e)} className="flex flex-col gap-4">
       {/* Name Input */}
       <div className="flex flex-col gap-3">
         <label className="text-[#666C6F]" htmlFor="name">
@@ -73,6 +88,11 @@ const Form = ({ type }) => {
             borderRadius: '30px',
             padding: '6px',
           }}
+          inputProps={{
+            name: 'phone',
+            required: true
+          }}
+      
         />
       </div>
 
@@ -111,9 +131,15 @@ const Form = ({ type }) => {
         </div>
       )}
 
+      {isError && <div className="text-red-500">sending failed. Please try again.</div>}
       {/* Submit Button */}
-      <button className="bg-main text-white py-3 rounded-4xl">SEND</button>
-    </div>
+      <button
+        disabled={isPending}
+        className={`${isPending ? 'bg-main/50' : 'bg-main'} w-1/2 m-auto text-white py-3 rounded-4xl disabled:opacity-50 disabled:cursor-not-allowed`}
+      >
+        {isPending ? 'sending...' : 'send'}
+      </button>
+    </form>
   );
 };
 

@@ -1,6 +1,8 @@
 import banner from '../../../assets/About-imgs/become_coach.png';
+import { useBecomeCoach } from '../../../hooks/becomeCoach-hooks/useBecomeCoachQuery';
 import Form from '../../common/form';
 function BecomeCoachForm() {
+  const { mutate, isPending, isError, isSuccess } = useBecomeCoach()
   return (
     <div className="h-fit">
       <div className="bg-main h-[200px] "></div>
@@ -19,7 +21,7 @@ function BecomeCoachForm() {
             </p>
           </div>
           <div>
-            <Form type={'coach'} />
+            <Form type={'coach'} mutate={mutate} isError={isError} isPending={isPending} isSuccess={isSuccess} />
           </div>
         </div>
       </div>
