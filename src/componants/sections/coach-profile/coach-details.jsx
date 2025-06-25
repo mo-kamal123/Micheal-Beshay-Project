@@ -1,7 +1,10 @@
+import { useSelector } from 'react-redux';
 import SectionTitle from '../../common/section-title';
 import CoachFeedback from './coach-feedback';
 
 const CoachDetails = () => {
+  const coach = useSelector(state => state.coach)
+  console.log(coach);
   return (
     <>
       <div className="m-auto flex justify-end">
@@ -10,19 +13,7 @@ const CoachDetails = () => {
             Details of coach
           </SectionTitle>
           <p className="text-[#666C6F] mr-5">
-            Massa odio interdum quisque massa ut mattis eget. Rhoncus sed convallis nulla sit
-            facilisis vitae id lacus. Pharetra ultrices nisl.Massa odio interdum quisque massa ut
-            mattis eget. Rhoncus sed convallis nulla sit facilisis vitae id lacus. Pharetra ultrices
-            nisl.Massa odio interdum quisque massa ut mattis eget. Rhoncus sed convallis nulla sit
-            facilisis vitae id lacus. Pharetra ultrices nisl.Massa odio interdum quisque massa ut
-            mattis eget. Rhoncus sed convallis nulla sit facilisis vitae id lacus. Pharetra ultrices
-            nisl.Massa odio interdum quisque massa ut mattis eget. Rhoncus sed convallis nulla sit
-            facilisis vitae id lacus. Pharetra ultrices nisl.Massa odio interdum quisque massa ut
-            mattis eget. Rhoncus sed convallis nulla sit facilisis vitae id lacus. Pharetra ultrices
-            nisl.Massa odio interdum quisque massa ut mattis eget. Rhoncus sed convallis nulla sit
-            facilisis vitae id lacus. Pharetra ultrices nisl.Massa odio interdum quisque massa ut
-            mattis eget. Rhoncus sed convallis nulla sit facilisis vitae id lacus. Pharetra ultrices
-            nisl.
+            {coach.description}
           </p>
         </div>
       </div>
