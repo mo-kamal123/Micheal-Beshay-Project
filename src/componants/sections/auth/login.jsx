@@ -8,8 +8,7 @@ const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [loginData, setLoginData] = useState({ username: '', password: '' });
-  const [disabled, setDisables] = useState(true);
-  // const { isError, isPending, isSuccess } = useLoginQuery()
+  const { mutate, isError, isPending, isSuccess } = useLoginQuery();
 
   /**
    * Handles changes to the login form fields.
@@ -42,10 +41,18 @@ const Login = () => {
     e.preventDefault();
     if (loginData.username && loginData.password) {
       console.log(loginData);
-      dispatch(login());
-      navigate('/');
+      //TODO: remove comment when real api is ready
+      // mutate(loginData);
+        dispatch(login());
+        navigate('/');
     }
+
+    // if (isSuccess) {
+    //   dispatch(login());
+    //   navigate('/');
+    // }
   };
+
 
   return (
     <div className="flex flex-col gap-5">
@@ -81,8 +88,9 @@ const Login = () => {
             onChange={e => handleChange('password', e)}
           />
         </div>
-        <button disabled={disabled} className="bg-main w-1/2 m-auto text-white py-3 rounded-4xl">
-          SEND
+        {isError && <div className="text-red-500">Login failed. Please try again.</div>}
+        <button disabled={isPending} className={`${isPending? 'bg-main/50' : 'bg-main'} w-1/2 m-auto text-white py-3 rounded-4xl`}>
+          {isPending ? 'Logging in...' : 'SEND'}
         </button>
       </form>
     </div>
