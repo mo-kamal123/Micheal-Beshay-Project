@@ -3,6 +3,8 @@ import PhoneInput from 'react-phone-input-2';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../../../store/auth-slice/auth-slice';
+import { useRegister } from '../../../hooks/auth-hooks/useRegisterQuery';
+import { isPending } from '@reduxjs/toolkit';
 
 /**
  * Register Component
@@ -23,6 +25,8 @@ function Register() {
 
   /* Button disabled state - prevents submission when form is incomplete   */
   const [disabled, setDisables] = useState(true);
+
+  const { mutate, isPending, isError, isSuccess } = useRegister()
 
   /**
    * Handles input changes and performs real-time validation
@@ -83,12 +87,16 @@ function Register() {
       registerData.phone &&
       registerData.email
     ) {
-      console.log(registerData); // TODO: Remove debug log
-
+      console.log(registerData); // TODO: Remove debug log and comment when real api is ready
+      // mutate(registerData)
       // TODO: Replace with actual registration API call
       // Currently just dispatches login action as placeholder
       dispatch(login());
       navigate('/');
+    }
+    if(isSuccess) {
+      // dispatch(login());
+      // navigate('/');
     }
   };
 
@@ -172,13 +180,13 @@ function Register() {
             placeholder="Enter your password"
           />
         </div>
-
+        {isError &&         <div className="text-red-500">register failed. Please try again.</div>}
         {/* Submit Button */}
         <button
-          disabled={disabled}
-          className="bg-main w-1/2 m-auto text-white py-3 rounded-4xl disabled:opacity-50 disabled:cursor-not-allowed"
+          disabled={disabled || isPending}
+          className={`${isPending ? 'bg-main/50' : 'bg-main'} w-1/2 m-auto text-white py-3 rounded-4xl disabled:opacity-50 disabled:cursor-not-allowed`}
         >
-          Create an account
+          {isPending ? 'sending...' : 'Create an account'}
         </button>
       </form>
     </div>

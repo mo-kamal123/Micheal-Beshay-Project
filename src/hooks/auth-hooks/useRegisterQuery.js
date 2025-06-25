@@ -4,9 +4,9 @@ import { changeStorage } from "../../utils/change-local-storage";
 
 
 // Custom hook for user registration using React Query's useMutation
-export const useRegister = (userData) => {
+export const useRegister = () => {
     return useMutation({
-        mutationFn: registerUser(userData),
+        mutationFn: registerUser,
         onSuccess: (data) => {
             // Handle successful registration, e.g., store user data or tokens
             console.log("Registration successful:", data);
