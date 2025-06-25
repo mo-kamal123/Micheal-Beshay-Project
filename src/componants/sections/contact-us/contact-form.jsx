@@ -2,7 +2,9 @@ import Form from '../../common/form';
 import banner from '../../../assets/About-imgs/banner.jpg';
 import { FiPhoneCall } from 'react-icons/fi';
 import { MdOutgoingMail } from 'react-icons/md';
+import { useContact } from '../../../hooks/contact-hooks/useContact';
 const ContactForm = () => {
+  const { mutate, isError, isPending, isSuccess } = useContact()
   return (
     <div className=" w-full md:w-[80%] m-auto md:my-20 md:overflow-hidden flex flex-col-reverse md:flex-row justify-between bg-body md:rounded-4xl">
       <div className="md:w-[50%] mt-5 md:mt-0 p-7 flex flex-col gap-4">
@@ -13,7 +15,8 @@ const ContactForm = () => {
             non id blandit netus.
           </p>
         </div>
-        <Form type={'contact'} />
+        <Form type={'contact'} mutate={mutate} isError={isError} isPending={isPending} isSuccess={isSuccess} />
+
         <div className="flex items-center justify-center gap-10 w-full">
           <div className="flex items-center gap-2">
             <div className="text-2xl">
