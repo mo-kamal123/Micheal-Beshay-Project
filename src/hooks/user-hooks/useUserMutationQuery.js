@@ -7,7 +7,7 @@ export const useUserMutationQuery = () => {
         if (sessionId) {
           return userServices.sendFeedBack(sessionId, userId, data);
         } else {
-          return userServices.updateUserData(userId, data);
+          return userServices.updateUserData(data);
         }
       },
     });

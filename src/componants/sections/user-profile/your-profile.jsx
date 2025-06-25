@@ -1,6 +1,8 @@
+import { useUserMutationQuery } from '../../../hooks/user-hooks/useUserMutationQuery';
 import Form from '../../common/form';
 
 const YourProfile = () => {
+  const { mutate, isError, isPending, isSuccess } = useUserMutationQuery();
   return (
     <div className="">
       <div>
@@ -11,7 +13,7 @@ const YourProfile = () => {
         </p>
       </div>
       <div>
-        <Form />
+        <Form  mutate={mutate} isError={isError} isPending={isPending} isSuccess={isSuccess} />
       </div>
     </div>
   );
