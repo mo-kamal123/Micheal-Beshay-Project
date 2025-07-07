@@ -26,7 +26,7 @@ function Register() {
   /* Button disabled state - prevents submission when form is incomplete   */
   const [disabled, setDisables] = useState(true);
 
-  const { mutate, isPending, isError, isSuccess } = useRegister()
+  const { mutate, isPending, isError, isSuccess } = useRegister();
 
   /**
    * Handles input changes and performs real-time validation
@@ -94,7 +94,7 @@ function Register() {
       dispatch(login());
       navigate('/');
     }
-    if(isSuccess) {
+    if (isSuccess) {
       // dispatch(login());
       // navigate('/');
     }
@@ -180,7 +180,7 @@ function Register() {
             placeholder="Enter your password"
           />
         </div>
-        {isError &&         <div className="text-red-500">register failed. Please try again.</div>}
+        {isError && <div className="text-red-500">register failed. Please try again.</div>}
         {/* Submit Button */}
         <button
           disabled={disabled || isPending}

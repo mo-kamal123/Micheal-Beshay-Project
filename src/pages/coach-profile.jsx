@@ -7,10 +7,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setCoach } from '../store/coach-slice/coach-slice';
 
 const CoachProfile = () => {
-  const coach = useSelector(state => state.coach)
-  const dispach = useDispatch()
+  const coach = useSelector(state => state.coach);
+  const dispach = useDispatch();
   const { data, isError, isLoading } = useCoachesQuery(coach.id);
-  if( data ) {
+  if (data) {
     dispach(setCoach(coach));
   }
   return (

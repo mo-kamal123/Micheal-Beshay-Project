@@ -43,8 +43,8 @@ const Login = () => {
       console.log(loginData);
       //TODO: remove comment when real api is ready
       // mutate(loginData);
-        dispatch(login());
-        navigate('/');
+      dispatch(login());
+      navigate('/');
     }
 
     // if (isSuccess) {
@@ -52,7 +52,6 @@ const Login = () => {
     //   navigate('/');
     // }
   };
-
 
   return (
     <div className="flex flex-col gap-5">
@@ -89,7 +88,10 @@ const Login = () => {
           />
         </div>
         {isError && <div className="text-red-500">Login failed. Please try again.</div>}
-        <button disabled={isPending} className={`${isPending? 'bg-main/50' : 'bg-main'} w-1/2 m-auto text-white py-3 rounded-4xl`}>
+        <button
+          disabled={isPending}
+          className={`${isPending ? 'bg-main/50' : 'bg-main'} w-1/2 m-auto text-white py-3 rounded-4xl`}
+        >
           {isPending ? 'Logging in...' : 'SEND'}
         </button>
       </form>

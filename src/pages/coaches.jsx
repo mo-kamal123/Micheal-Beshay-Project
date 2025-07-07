@@ -71,7 +71,7 @@ const Coaches = () => {
       rate: '4.5',
     },
   ];
-  const {data, isError, isLoading} = useCoachesQuery()
+  const { data, isError, isLoading } = useCoachesQuery();
   return (
     <div className="min-h-screen bg-body">
       <PageHead />

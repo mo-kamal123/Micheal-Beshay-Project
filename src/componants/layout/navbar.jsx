@@ -202,7 +202,7 @@ const Navbar = () => {
             </div>
             <div className="flex flex-col gap-10">
               {links.map((link, index) => (
-              // Map through links and create NavLink for each in mobile menu
+                // Map through links and create NavLink for each in mobile menu
                 <NavLink key={index} to={link.path} onClick={() => setMenuOpen(false)}>
                   {t(link.title)}
                 </NavLink>

@@ -13,7 +13,7 @@ const YourProfile = () => {
         </p>
       </div>
       <div>
-        <Form  mutate={mutate} isError={isError} isPending={isPending} isSuccess={isSuccess} />
+        <Form mutate={mutate} isError={isError} isPending={isPending} isSuccess={isSuccess} />
       </div>
     </div>
   );

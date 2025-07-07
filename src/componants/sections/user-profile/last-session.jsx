@@ -30,10 +30,7 @@ const LastSession = () => {
 
       <div className="flex flex-col md:flex-row justify-between md:items-center gap-5 md:gap-0">
         <p className="font-[600] text-[14px] ">{sessionData.feedbackMessage}</p>
-        <Link
-          to={'/rate-sesstion'}
-          className="bg-main w-fit text-white py-3 px-5 rounded-xl "
-        >
+        <Link to={'/rate-sesstion'} className="bg-main w-fit text-white py-3 px-5 rounded-xl ">
           Feedback your Session
         </Link>
       </div>

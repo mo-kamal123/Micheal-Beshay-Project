@@ -12,7 +12,7 @@ const Form = ({ type, mutate, isPending, isError, isSuccess }) => {
   }); // Initial state for form data
 
   // Reference to the form element for resetting after submission
-  const formRef = useRef()
+  const formRef = useRef();
   /**
    * Handles input changes and updates the form data state.
    * @param {string} key - The field name to update (e.g., 'name', 'email', 'phone', 'message', 'knowUs').
@@ -23,21 +23,20 @@ const Form = ({ type, mutate, isPending, isError, isSuccess }) => {
     setFormData(prev => ({ ...prev, [key]: value }));
   };
 
-  
   // Handles form submission, prevents default behavior, and calls the mutate function with form data.
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
     if (formData.name || formData.email || formData.phone) {
-      mutate(formData)
+      mutate(formData);
     }
     // Reset the form after submission
-    if(isSuccess) {
-      formRef.current.reset()
-      setFormData({phone: '+20'})
+    if (isSuccess) {
+      formRef.current.reset();
+      setFormData({ phone: '+20' });
     }
-  }
+  };
   return (
-    <form ref={formRef} onSubmit={(e) => handleSubmit(e)} className="flex flex-col gap-4">
+    <form ref={formRef} onSubmit={e => handleSubmit(e)} className="flex flex-col gap-4">
       {/* Name Input */}
       <div className="flex flex-col gap-3">
         <label className="text-[#666C6F]" htmlFor="name">
@@ -90,9 +89,8 @@ const Form = ({ type, mutate, isPending, isError, isSuccess }) => {
           }}
           inputProps={{
             name: 'phone',
-            required: true
+            required: true,
           }}
-      
         />
       </div>
 

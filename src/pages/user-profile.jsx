@@ -10,7 +10,7 @@ const UserProfile = () => {
   const [active, setActive] = useState('profile'); // Default active tab is 'profile'
   const user = useSelector(state => state.user); // Access user data from Redux store
   console.log('User Profile:', user); // Debug log to check user data
-  const { data, isError, isLoading } = useUserQuery(user.id); // Custom hook to fetch user data, sessions, etc. 
+  const { data, isError, isLoading } = useUserQuery(user.id); // Custom hook to fetch user data, sessions, etc.
   const { pathname } = useLocation(); // Gets current URL path
   const currRoute = pathname; // Checks if the current route is the profile route
   console.log(currRoute); // Debug log to check the current route

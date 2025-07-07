@@ -6,7 +6,7 @@ import { TbMessages } from 'react-icons/tb';
 import { FaStar } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
 
-const CoachInfo = ({coach}) => {
+const CoachInfo = ({ coach }) => {
   const { pathname } = useLocation(); // Gets current URL path
   const currRoute = pathname;
   console.log(currRoute); // TODO: Remove debug log
@@ -35,7 +35,7 @@ const CoachInfo = ({coach}) => {
                 </div>
               </SectionTitle>
               <h1 className="text-[28px] sm:text-[36px] md:text-[48px] font-bold mt-2">
-              {coach.name}
+                {coach.name}
               </h1>
             </div>
 
@@ -67,7 +67,7 @@ const CoachInfo = ({coach}) => {
             </div>
 
             {/* Button */}
-            {currRoute === `/coaches/${coach.id}`  && (
+            {currRoute === `/coaches/${coach.id}` && (
               <div className="pt-4">
                 <Link
                   to="book-session"

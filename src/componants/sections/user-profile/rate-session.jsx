@@ -16,14 +16,17 @@ function RateSesstion() {
   };
 
   const handleSubmit = e => {
-    e.preventDefault(); 
-    mutate(feedback) ; // Call the mutation function with the feedback data
-  }
-  
+    e.preventDefault();
+    mutate(feedback); // Call the mutation function with the feedback data
+  };
+
   return (
     <div className=" bg-body">
       <CoachInfo />
-      <form onSubmit={ e => handleSubmit(e)} className="w-[95%] md:w-[70%] m-auto py-20 flex flex-col gap-5 ">
+      <form
+        onSubmit={e => handleSubmit(e)}
+        className="w-[95%] md:w-[70%] m-auto py-20 flex flex-col gap-5 "
+      >
         <h1 className="text-[24px] md:text-[40px] font-[500] ">Rate your session</h1>
         <div className=" flex flex-col gap-3">
           <h3 className="font-[700] ">Your reservation</h3>
