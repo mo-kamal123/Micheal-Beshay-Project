@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import CoachInfo from '../coach-profile/coach-info';
+import { useUserMutationQuery } from '../../../hooks/user-hooks/useUserMutationQuery';
 
 function RateSesstion() {
   const [feedback, setFeedback] = useState({ opinion: '', message: '' }); // Initial state for feedback
-
+  const { mutate, isError, isPending, isSuccess } = useUserMutationQuery(); // Hook to handle user mutations (e.g., sending feedback)
   /**
    * Handles input changes and updates the feedback state.
    * @param {string} key - The field name to update (e.g., 'opinion', 'message').
@@ -13,10 +14,16 @@ function RateSesstion() {
     const value = e.target.value;
     setFeedback(prev => ({ ...prev, [key]: value }));
   };
+
+  const handleSubmit = e => {
+    e.preventDefault(); 
+    mutate(feedback) ; // Call the mutation function with the feedback data
+  }
+  
   return (
     <div className=" bg-body">
       <CoachInfo />
-      <div className="w-[95%] md:w-[70%] m-auto py-20 flex flex-col gap-5 ">
+      <form onSubmit={ e => handleSubmit(e)} className="w-[95%] md:w-[70%] m-auto py-20 flex flex-col gap-5 ">
         <h1 className="text-[24px] md:text-[40px] font-[500] ">Rate your session</h1>
         <div className=" flex flex-col gap-3">
           <h3 className="font-[700] ">Your reservation</h3>
@@ -47,7 +54,7 @@ function RateSesstion() {
           />
         </div>
         <button className="bg-main text-white py-3 rounded-4xl">SEND</button>
-      </div>
+      </form>
     </div>
   );
 }

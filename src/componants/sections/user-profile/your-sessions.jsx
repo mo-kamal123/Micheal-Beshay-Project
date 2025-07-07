@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import NextSession from './next-session';
 import LastSession from './last-session';
+import { useUserQuery } from '../../../hooks/user-hooks/useUserQuery';
 const YourSesstions = () => {
   const [active, setActive] = useState('next'); // Default active tab is 'next'
+  const { data, isError, isLoading } = useUserQuery(null, true); // Custom hook to fetch user data, sessions, etc.
   return (
     <div className="flex flex-col md:flex-row justify-between gap-10">
       <div className="bg-white h-fit md:w-1/4 p-6 flex md:flex-col items-center justify-between gap-5 rounded-4xl">
