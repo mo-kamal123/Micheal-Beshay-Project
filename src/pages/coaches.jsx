@@ -5,6 +5,7 @@ import Clients from '../componants/sections/shared/clients';
 import NumbersCard from '../componants/sections/shared/number-card';
 import OurCoachesSlider from '../componants/sections/shared/our-coaches';
 import WhyUs from '../componants/sections/shared/why-us';
+import { useCoachesQuery } from '../hooks/coaches-hooks/useCoachesQuery';
 
 const Coaches = () => {
   // Sample data for coaches, this will replaced with actual data from an API or database
@@ -70,6 +71,7 @@ const Coaches = () => {
       rate: '4.5',
     },
   ];
+  const {data, isError, isLoading} = useCoachesQuery()
   return (
     <div className="min-h-screen bg-body">
       <PageHead />
