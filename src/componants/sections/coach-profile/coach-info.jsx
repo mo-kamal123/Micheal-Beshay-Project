@@ -6,10 +6,11 @@ import { TbMessages } from 'react-icons/tb';
 import { FaStar } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
 
-const CoachInfo = () => {
+const CoachInfo = ({coach}) => {
   const { pathname } = useLocation(); // Gets current URL path
   const currRoute = pathname;
   console.log(currRoute); // TODO: Remove debug log
+  console.log(coach);
   return (
     <div className="bg-main py-10 text-white">
       <div className="container mx-auto px-4">
@@ -34,7 +35,7 @@ const CoachInfo = () => {
                 </div>
               </SectionTitle>
               <h1 className="text-[28px] sm:text-[36px] md:text-[48px] font-bold mt-2">
-                Amand Clar
+              {coach.name}
               </h1>
             </div>
 
@@ -43,7 +44,7 @@ const CoachInfo = () => {
               <div className="flex gap-2 items-start">
                 <ImCoinDollar className="text-lg mt-1" />
                 <div>
-                  <p className="text-sm">300 EGP</p>
+                  <p className="text-sm">{coach.price} EGP</p>
                   <p className="text-xs text-white/80">Per Hour</p>
                 </div>
               </div>
@@ -51,7 +52,7 @@ const CoachInfo = () => {
               <div className="flex gap-2 items-start">
                 <MdEventSeat className="text-lg mt-1" />
                 <div>
-                  <p className="text-sm">33</p>
+                  <p className="text-sm">{coach.totalSessions}</p>
                   <p className="text-xs text-white/80">Total sessions</p>
                 </div>
               </div>
@@ -59,14 +60,14 @@ const CoachInfo = () => {
               <div className="flex gap-2 items-start">
                 <TbMessages className="text-lg mt-1" />
                 <div>
-                  <p className="text-sm">23 feedback</p>
+                  <p className="text-sm">{coach.feedback} feedback</p>
                   <p className="text-xs text-white/80">View Feedback</p>
                 </div>
               </div>
             </div>
 
             {/* Button */}
-            {currRoute === '/coaches/22' && (
+            {currRoute === `/coaches/${coach.id}`  && (
               <div className="pt-4">
                 <Link
                   to="book-session"
