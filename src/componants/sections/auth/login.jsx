@@ -2,13 +2,13 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../../../store/auth-slice/auth-slice';
 import { useState } from 'react';
-import { useLoginQuery } from '../../../hooks/auth-hooks/useLoginQuery';
+import { useLogin } from '../../../hooks/auth-hooks/useLogin';
 
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [loginData, setLoginData] = useState({ username: '', password: '' });
-  const { mutate, isError, isPending, isSuccess } = useLoginQuery();
+  const { mutate, data, isError, isPending, isSuccess } = useLogin();
 
   /**
    * Handles changes to the login form fields.
@@ -23,11 +23,11 @@ const Login = () => {
     const newLoginData = { ...loginData, [key]: value };
     setLoginData(newLoginData);
 
-    if (newLoginData.username && newLoginData.password) {
-      setDisables(false);
-    } else {
-      setDisables(true);
-    }
+    // if (newLoginData.username && newLoginData.password) {
+    //   setDisables(false);
+    // } else {
+    //   setDisables(true);
+    // }
   };
 
   /**
@@ -40,18 +40,17 @@ const Login = () => {
   const handleLogin = e => {
     e.preventDefault();
     if (loginData.username && loginData.password) {
-      console.log(loginData);
-      //TODO: remove comment when real api is ready
-      // mutate(loginData);
-      dispatch(login());
-      navigate('/');
-    }
-
-    // if (isSuccess) {
-    //   dispatch(login());
-    //   navigate('/');
-    // }
-  };
+      // Dispatch the login mutation with the login data
+      mutate(loginData , {
+        onSuccess: (data) => {
+          if (data.success) {
+            // Navigate to home page or dashboard after successful login
+            dispatch(login());
+            navigate('/');
+          }
+        },
+      });
+    }};
 
   return (
     <div className="flex flex-col gap-5">
@@ -87,7 +86,9 @@ const Login = () => {
             onChange={e => handleChange('password', e)}
           />
         </div>
-        {isError && <div className="text-red-500">Login failed. Please try again.</div>}
+        {isSuccess && !data?.success ? (
+  <div className="text-red-500">{data.message}</div>
+) : null}
         <button
           disabled={isPending}
           className={`${isPending ? 'bg-main/50' : 'bg-main'} w-1/2 m-auto text-white py-3 rounded-4xl`}

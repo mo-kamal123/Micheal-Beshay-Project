@@ -3,7 +3,6 @@ import { changeStorage, getFromStorage, removeItem } from '../../utils/change-lo
 
 const loggedIn = getFromStorage('loggedIn') || false; // Default value for loggedIn is false if not found in local storage
 const initialState = { loggedIn };
-console.log(initialState.loggedIn); // Debug log to check the initial state of loggedIn
 export const authSlice = createSlice({
   name: 'auth',
   initialState,

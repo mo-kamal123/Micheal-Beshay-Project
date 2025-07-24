@@ -2,7 +2,12 @@ import { api } from '../axios-global';
 
 export const userServices = {
   getUserData: async id => {
-    const response = await api.get(`user/${id}`);
+    const response = await api.get(`/api/web_clone/user/me`, {
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': 1234, // Ensure you have the API key set in your environment variables
+      },
+    });
     return response.data;
   },
   updateUserData: async (id, data) => {
