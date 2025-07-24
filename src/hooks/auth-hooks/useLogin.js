@@ -12,8 +12,7 @@ export const useLogin = () => {
         console.error('Login failed:', data.message);
         return;
       }
-      changeStorage("token", JSON.stringify(data.data.token));
-      
+      changeStorage('token', JSON.stringify(data.data.token));
     },
   });
 };

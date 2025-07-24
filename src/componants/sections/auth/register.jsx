@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { login } from "../../../store/auth-slice/auth-slice";
-import { useRegister } from "../../../hooks/auth-hooks/useRegister";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { login } from '../../../store/auth-slice/auth-slice';
+import { useRegister } from '../../../hooks/auth-hooks/useRegister';
 
 function Register() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const [registerData, setRegisterData] = useState({
-    email: "",
-    password: "",
-    password_confirmation: "",
-    full_name: "",
+    email: '',
+    password: '',
+    password_confirmation: '',
+    full_name: '',
   });
 
   const [isDisabled, setIsDisabled] = useState(true);
@@ -36,12 +36,12 @@ function Register() {
   };
 
   /** Handle form submission */
-  const handleRegister = (e) => {
+  const handleRegister = e => {
     e.preventDefault();
     if (isDisabled) return; // Prevent submission if form invalid
 
     mutate(registerData, {
-      onSuccess: (response) => {
+      onSuccess: response => {
         console.log(response);
         if (response.status === 'verification_required') {
           // dispatch(login());
@@ -55,8 +55,7 @@ function Register() {
     <div className="flex flex-col gap-5">
       {/* Form Description */}
       <p className="text-[#666C6F] text-[14px]">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry.
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       </p>
 
       {/* Registration Form */}
@@ -67,7 +66,7 @@ function Register() {
           type="email"
           name="email"
           placeholder="Enter your email"
-          onChange={(e) => handleChange("email", e)}
+          onChange={e => handleChange('email', e)}
         />
 
         {/* Username */}
@@ -76,7 +75,7 @@ function Register() {
           type="text"
           name="username"
           placeholder="Enter your username"
-          onChange={(e) => handleChange("full_name", e)}
+          onChange={e => handleChange('full_name', e)}
         />
 
         {/* Password */}
@@ -85,7 +84,7 @@ function Register() {
           type="password"
           name="password"
           placeholder="Enter your password"
-          onChange={(e) => handleChange("password", e)}
+          onChange={e => handleChange('password', e)}
         />
 
         {/* Password Confirmation */}
@@ -94,7 +93,7 @@ function Register() {
           type="password"
           name="password_confirmation"
           placeholder="Enter your password again"
-          onChange={(e) => handleChange("password_confirmation", e)}
+          onChange={e => handleChange('password_confirmation', e)}
         />
 
         {/* Show API Error or Info */}
@@ -102,9 +101,7 @@ function Register() {
           <div className="text-red-500 text-sm">{data.message}</div>
         )}
         {isError && (
-          <div className="text-red-500 text-sm">
-            {error?.message || "Something went wrong"}
-          </div>
+          <div className="text-red-500 text-sm">{error?.message || 'Something went wrong'}</div>
         )}
 
         {/* Submit Button */}
@@ -112,10 +109,10 @@ function Register() {
           type="submit"
           disabled={isDisabled || isPending}
           className={`${
-            isPending ? "bg-main/50" : "bg-main"
+            isPending ? 'bg-main/50' : 'bg-main'
           } w-1/2 m-auto text-white py-3 rounded-4xl disabled:opacity-50 disabled:cursor-not-allowed`}
         >
-          {isPending ? "Sending..." : "Create an account"}
+          {isPending ? 'Sending...' : 'Create an account'}
         </button>
       </form>
     </div>

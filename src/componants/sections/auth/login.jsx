@@ -41,8 +41,8 @@ const Login = () => {
     e.preventDefault();
     if (loginData.username && loginData.password) {
       // Dispatch the login mutation with the login data
-      mutate(loginData , {
-        onSuccess: (data) => {
+      mutate(loginData, {
+        onSuccess: data => {
           if (data.success) {
             // Navigate to home page or dashboard after successful login
             dispatch(login());
@@ -50,7 +50,8 @@ const Login = () => {
           }
         },
       });
-    }};
+    }
+  };
 
   return (
     <div className="flex flex-col gap-5">
@@ -86,9 +87,7 @@ const Login = () => {
             onChange={e => handleChange('password', e)}
           />
         </div>
-        {isSuccess && !data?.success ? (
-  <div className="text-red-500">{data.message}</div>
-) : null}
+        {isSuccess && !data?.success ? <div className="text-red-500">{data.message}</div> : null}
         <button
           disabled={isPending}
           className={`${isPending ? 'bg-main/50' : 'bg-main'} w-1/2 m-auto text-white py-3 rounded-4xl`}

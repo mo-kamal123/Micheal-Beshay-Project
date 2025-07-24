@@ -101,13 +101,13 @@ const Verify = () => {
         <p className="text-red-500">
           Error: {data?.data.errors.code[0] || 'Verification failed. Please try again.'}
         </p>
-      )}    
+      )}
       <button
         onClick={handleClickSubmit}
         disabled={isPending}
-        className={`${isPending ? 'bg-main/50' : 'bg-main' } w-1/2 m-auto text-white py-3 rounded-4xl`}
+        className={`${isPending ? 'bg-main/50' : 'bg-main'} w-1/2 m-auto text-white py-3 rounded-4xl`}
       >
-        {isPending ?  'Sending...' : 'VERIFY' } {/* Show loading state if pending */}
+        {isPending ? 'Sending...' : 'VERIFY'} {/* Show loading state if pending */}
       </button>
     </div>
   );
