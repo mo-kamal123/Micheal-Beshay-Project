@@ -9,7 +9,7 @@ export const useRegister = () => {
     onSuccess: data => {
       // Handle successful registration, e.g., store user data or tokens
       console.log('Registration successful:', data);
-      changeStorage('token', JSON.stringify(data.token));
+      // changeStorage('token', JSON.stringify(data.data.token));
     },
   });
 };
